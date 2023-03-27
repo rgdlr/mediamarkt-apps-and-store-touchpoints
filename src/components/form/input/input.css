@@ -1,0 +1,11 @@
+.input {
+	border-radius: 0.5rem;
+	border: 0.1rem solid var(--gray-200);
+	padding: 1rem;
+	position: relative;
+	width: 100%;
+}
+
+.input ~ :not(.label.label--bottom) {
+	margin-bottom: 1rem;
+}

@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactElement } from 'react';
-import { Parcel as ParcelI } from '../../interfaces';
+import { Parcel as ParcelI } from '../../../interfaces';
 import './parcel.css';
 
 export interface JSXParcelElement extends PropsWithChildren<Partial<HTMLDivElement>> {

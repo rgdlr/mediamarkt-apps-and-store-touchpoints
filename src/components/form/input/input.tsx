@@ -11,11 +11,11 @@ export interface CustomInputElement extends JSXInputElement {
 }
 
 export function Input(props: CustomInputElement): ReactElement {
-	const { label } = props;
+	const { label, list } = props;
 	return (
 		<>
 			<Label>{label}</Label>
-			<input className='input'></input>
+			<input className='input' list={list as unknown as string}></input>
 		</>
 	);
 }

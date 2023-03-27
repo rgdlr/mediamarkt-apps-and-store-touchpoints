@@ -17,5 +17,5 @@ export function DialogError(props: CustomDialogElement): ReactElement {
 
 	const footer = <Button onClick={() => setOpen(false)}>BACK</Button>;
 
-	return <Dialog body={body} footer={footer} position={Position.CENTER} open={open}></Dialog>;
+	return <Dialog body={body} footer={footer} open={open} position={Position.CENTER}></Dialog>;
 }

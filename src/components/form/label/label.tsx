@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactElement } from 'react';
-import { Position } from '../../constants';
+import { Position } from '../../../constants';
 import './label.css';
 
 export type JSXLabelElement = PropsWithChildren<
