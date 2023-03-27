@@ -1,9 +1,13 @@
 .parcel {
+	border-bottom: 0.1rem solid var(--gray-200);
+	cursor: default;
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 0.1rem solid var(--gray-200);
-	margin-bottom: 1rem;
-	padding-bottom: 1rem;
+	padding: 1rem;
+}
+
+.parcel:hover {
+	background-color: var(--gray-200);
 }
 
 .parcel__information {
@@ -18,6 +22,6 @@
 .parcel__date {
 	color: var(--red-100);
 	display: grid;
-	place-content: center;
 	font-size: 0.8rem;
+	place-content: center;
 }
