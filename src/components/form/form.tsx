@@ -1,7 +1,13 @@
-import { ReactElement } from 'react';
+import { PropsWithChildren, ReactElement } from 'react';
+import './form.css';
 
-export interface JSXFormElement extends HTMLFormElement {}
+export type JSXFormElement = PropsWithChildren<
+	Omit<Omit<Partial<HTMLFormElement>, 'children'>, 'style'>
+>;
 
-export function Form(props: JSXFormElement): ReactElement {
-	return <></>;
+export interface CustomFormElement extends JSXFormElement {}
+
+export function Form(props: CustomFormElement): ReactElement {
+	const { children } = props;
+	return <form className='form'>{children}</form>;
 }
