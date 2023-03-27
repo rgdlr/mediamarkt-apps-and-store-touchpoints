@@ -14,7 +14,7 @@ export function Parcels(props: JSXParcelsElement): JSX.Element {
 	return (
 		<section className='parcels'>
 			<header className='parcels__header'>
-				<h1>Parcel Lists</h1>
+				<h2>Parcel Lists</h2>
 			</header>
 			<main className='parcels__main'>
 				{parcels
