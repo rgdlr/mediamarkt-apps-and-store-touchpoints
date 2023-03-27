@@ -1,5 +1,7 @@
 # MediaMarkt Apps & Store Touchpoints
 
+This is a project created for a MediaMarkt hackathon. You can find more information in section [Hackathon information](#hackathon-information).
+
 ## Installation
 
 Use the package manager [npm](https://www.npmjs.com/) to install app dependencies.
@@ -25,7 +27,7 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/) © rgdlr
 
 ## Hackathon information
 
