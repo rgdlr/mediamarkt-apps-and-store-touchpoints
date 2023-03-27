@@ -1,6 +1,14 @@
-import { Parcels } from '../components';
+import { Dialog, DialogError, DialogSuccess, Parcels } from '../components';
 import { getParcels } from '../services';
 
 export function App(): JSX.Element {
-	return <Parcels parcels={getParcels()}></Parcels>;
+	const parcels = getParcels();
+	return (
+		<>
+			<Parcels parcels={parcels}></Parcels>
+			<Dialog open></Dialog>
+			<DialogSuccess></DialogSuccess>
+			<DialogError></DialogError>
+		</>
+	);
 }
