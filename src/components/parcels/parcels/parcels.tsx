@@ -5,8 +5,8 @@ import { Button, Dialog, Form, Input, Parcel, Select, Svg } from '../../index';
 import './parcels.css';
 
 export interface JSXParcelsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
-	parcels?: ParcelI[];
 	carriers?: CarrierI[];
+	parcels?: ParcelI[];
 }
 
 export function Parcels(props: JSXParcelsElement): ReactElement {
@@ -17,16 +17,15 @@ export function Parcels(props: JSXParcelsElement): ReactElement {
 	const body = (
 		<Form>
 			<Input label='ID' list={'parcel-id' as unknown as HTMLElement}></Input>
-			<Select label='Carrier ID'>
+			<Input label='Carrier ID' list={'carrier-id' as unknown as HTMLElement}></Input>
+			<datalist id='carrier-id'>
 				{carriers?.map((carrier) => (
-					<option key={carrier.id.$oid} value={carrier.id.$oid}>
-						{carrier.id.$oid.toUpperCase()}
-					</option>
+					<option key={carrier.id.$oid} value={carrier.id.$oid.toUpperCase()}></option>
 				))}
-			</Select>
+			</datalist>
 			<datalist id='parcel-id'>
 				{parcels?.map((parcel) => (
-					<option key={parcel.id.$oid} value={parcel.id.$oid}></option>
+					<option key={parcel.id.$oid} value={parcel.id.$oid.toUpperCase()}></option>
 				))}
 			</datalist>
 		</Form>
