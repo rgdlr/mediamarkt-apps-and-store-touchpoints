@@ -2,7 +2,7 @@ import { useFetch } from "../hooks";
 import { Id, Parcel } from "../interfaces";
 
 export function getParcels(): Parcel[] | undefined {
-  const { data: parcels } = useFetch<Parcel[]>("src/mocks/items.json");
+  const { data: parcels } = useFetch<Parcel[]>("src/mocks/parcels.json");
   return parcels;
 }
 
