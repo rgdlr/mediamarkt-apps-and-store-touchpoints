@@ -13,7 +13,7 @@ export interface CustomButtonElement extends JSXButtonElement {
 }
 
 export function Button(props: CustomButtonElement): React.ReactElement {
-	const { children, style, shape = Shape.RECTANGLE, onClick } = props;
+	const { children, onClick, shape = Shape.RECTANGLE, style } = props;
 	return (
 		<button style={style} className={`button button--${shape}`} onClick={onClick}>
 			{children}
