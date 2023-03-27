@@ -1,5 +1,5 @@
 export { Button } from './button/button';
-export { Dialog } from './dialog/dialog';
+export { Dialog, DialogError, DialogSuccess } from './dialog/dialog';
 export { Form } from './form/form';
 export { Input } from './input/input';
 export { Parcel } from './parcel/parcel';
