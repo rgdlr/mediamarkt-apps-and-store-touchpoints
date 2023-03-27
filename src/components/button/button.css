@@ -1,1 +1,28 @@
-.button {}
+.button {
+	all: unset;
+	align-items: center;
+	background-color: var(--red-100);
+	box-sizing: border-box;
+	color: var(--white-100);
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.button:hover {
+	opacity: 0.75;
+}
+
+.button--circle {
+	border-radius: 50%;
+	box-shadow: 0px 3px 5px -1px rgba(58, 53, 65, 0.2), 0px 5px 8px rgba(58, 53, 65, 0.14), 0px 1px 14px rgba(58, 53, 65, 0.12);
+	font-size: 2rem;
+	height: 3rem;
+	width: 3rem;
+}
+
+.button--rectangle {
+	box-shadow: 0px 4px 8px -4px rgba(58, 53, 65, 0.42);
+	border-radius: 5px;
+	width: 100%;
+}

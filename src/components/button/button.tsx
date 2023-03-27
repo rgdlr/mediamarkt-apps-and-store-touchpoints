@@ -1,5 +1,22 @@
-export interface JSXButtonElement extends HTMLButtonElement {}
+import { CSSProperties, PropsWithChildren } from 'react';
+import { Shape } from '../../constants';
+import './button.css';
 
-export function Button(props: JSXButtonElement): JSX.Element {
-  return <></>;
+export type JSXButtonElement = PropsWithChildren<
+	Omit<Omit<Partial<HTMLButtonElement>, 'children'>, 'style'>
+>;
+
+export interface CustomButtonElement extends JSXButtonElement {
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
+	shape?: Shape;
+	style?: CSSProperties;
+}
+
+export function Button(props: CustomButtonElement): React.ReactElement {
+	const { children, style, shape = Shape.RECTANGLE, onClick } = props;
+	return (
+		<button style={style} className={`button button--${shape}`} onClick={onClick}>
+			{children}
+		</button>
+	);
 }
