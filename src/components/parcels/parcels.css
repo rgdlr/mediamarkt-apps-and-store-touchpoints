@@ -1,1 +1,24 @@
-.parcels {}
+.parcels {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 1rem;
+}
+
+.parcels__header {
+	padding-block: 1rem;
+	font-size: 1.5rem;
+}
+
+.parcels__main {
+	flex-grow: 1;
+}
+
+.parcels__footer {
+	background-color: var(--white-100);
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+	position: sticky;
+}

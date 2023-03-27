@@ -1,1 +1,24 @@
-.parcel {}
+.parcel {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--gray-200);
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+}
+
+.parcel__information {
+	line-height: 1.25;
+}
+
+.parcel__carriers,
+.parcel__items {
+	color: var(--gray-100);
+	font-size: 0.8rem;
+}
+
+.parcel__date {
+	color: var(--red-100);
+	display: grid;
+	place-content: center;
+	font-size: 0.8rem;
+}
