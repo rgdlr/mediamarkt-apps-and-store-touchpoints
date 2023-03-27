@@ -34,12 +34,12 @@
 }
 
 .dialog__header {
-
 }
 
 .dialog__title {
 	font-size: 1.25rem;
-	color: var(--gray-100);
+	text-align: center;
+	margin-bottom: 2rem;
 }
 
 .dialog__body {
@@ -54,7 +54,6 @@
 
 .dialog__text {
 	font-size: 1.25rem;
-	color: var(--gray-100);
 	text-align: center;
 	margin-bottom: 2rem;
 }
