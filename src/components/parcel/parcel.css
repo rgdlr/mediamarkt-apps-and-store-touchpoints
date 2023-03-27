@@ -12,7 +12,6 @@
 
 .parcel__carriers,
 .parcel__items {
-	color: var(--gray-100);
 	font-size: 0.8rem;
 }
 
