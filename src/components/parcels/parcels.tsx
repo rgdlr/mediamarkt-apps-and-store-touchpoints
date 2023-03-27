@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactElement } from 'react';
 import { Icon, Shape } from '../../constants';
 import { Parcel as ParcelI } from '../../interfaces';
 import { Button, Parcel, Svg } from '../index';
@@ -8,7 +8,7 @@ export interface JSXParcelsElement extends PropsWithChildren<Partial<HTMLDivElem
 	parcels?: ParcelI[];
 }
 
-export function Parcels(props: JSXParcelsElement): JSX.Element {
+export function Parcels(props: JSXParcelsElement): ReactElement {
 	const { children, parcels } = props;
 
 	return (

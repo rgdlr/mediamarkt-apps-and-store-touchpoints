@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 export const Icon = {
 	error: (
 		<svg fill='currentColor' width='144' height='144' viewBox='0 0 144 144'>
@@ -32,7 +34,7 @@ export interface JSXSvgElement extends Partial<SVGElement> {
 	icon: keyof typeof Icon;
 }
 
-export function Svg(props: JSXSvgElement): JSX.Element {
+export function Svg(props: JSXSvgElement): ReactElement {
 	const { icon } = props;
 	return Icon[icon];
 }

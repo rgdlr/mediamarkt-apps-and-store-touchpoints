@@ -1,5 +1,7 @@
+import { ReactElement } from 'react';
+
 export interface JSXScannerElement extends HTMLInputElement {}
 
-export function Scanner(props: JSXScannerElement): JSX.Element {
-  return <></>;
+export function Scanner(props: JSXScannerElement): ReactElement {
+	return <></>;
 }

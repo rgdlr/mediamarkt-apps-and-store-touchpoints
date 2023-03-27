@@ -1,4 +1,4 @@
-import { CSSProperties, PropsWithChildren } from 'react';
+import { CSSProperties, PropsWithChildren, ReactElement } from 'react';
 import { Shape } from '../../constants';
 import './button.css';
 
@@ -12,7 +12,7 @@ export interface CustomButtonElement extends JSXButtonElement {
 	style?: CSSProperties;
 }
 
-export function Button(props: CustomButtonElement): React.ReactElement {
+export function Button(props: CustomButtonElement): ReactElement {
 	const { children, onClick, shape = Shape.RECTANGLE, style } = props;
 	return (
 		<button style={style} className={`button button--${shape}`} onClick={onClick}>

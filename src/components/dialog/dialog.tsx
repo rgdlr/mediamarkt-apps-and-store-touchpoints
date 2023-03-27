@@ -14,7 +14,7 @@ export interface CustomDialogElement extends JSXDialogElement {
 	position?: Position;
 }
 
-export function Dialog(props: CustomDialogElement): JSX.Element {
+export function Dialog(props: CustomDialogElement): ReactElement {
 	const { body, children, footer, header, open, position = Position.BOTTOM } = props;
 	return (
 		<div className={`dialog dialog--${position} ${open ? 'dialog--open' : ''}`}>

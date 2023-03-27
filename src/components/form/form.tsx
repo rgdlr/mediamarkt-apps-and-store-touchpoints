@@ -1,5 +1,7 @@
+import { ReactElement } from 'react';
+
 export interface JSXFormElement extends HTMLFormElement {}
 
-export function Form(props: JSXFormElement): JSX.Element {
-  return <></>;
+export function Form(props: JSXFormElement): ReactElement {
+	return <></>;
 }

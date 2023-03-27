@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Position } from '../../../constants';
 import { Button, Dialog, Svg } from '../../index';
 import { CustomDialogElement } from '../dialog';
 
-export function DialogError(props: CustomDialogElement): JSX.Element {
+export function DialogError(props: CustomDialogElement): ReactElement {
 	const [open, setOpen] = useState(props.open);
 
 	const body = (

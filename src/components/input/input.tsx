@@ -1,5 +1,15 @@
-export interface JSXInputElement extends HTMLInputElement {}
+import { PropsWithChildren, ReactElement } from 'react';
 
-export function Input(props: JSXInputElement): JSX.Element {
-  return <></>;
+export type JSXInputElement = PropsWithChildren<
+	Omit<Omit<Partial<HTMLButtonElement>, 'children'>, 'style'>
+>;
+
+export interface CustomInputElement extends JSXInputElement {}
+
+export function Input(props: CustomInputElement): ReactElement {
+	return (
+		<>
+			<input className='input'></input>
+		</>
+	);
 }
