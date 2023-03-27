@@ -1,0 +1,12 @@
+.label {
+	font-size: 0.75rem;
+}
+
+.label--bottom {
+	background-color: var(--white-100);
+	left: calc(1rem - 0.25rem);
+	padding: 0.25rem;
+	position: relative;
+	top: 0.65rem;
+	z-index: 1;
+}
