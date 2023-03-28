@@ -1,17 +1,24 @@
-import { PropsWithChildren, ReactElement, useState } from 'react';
+import { PropsWithChildren, ReactElement, SyntheticEvent, useState } from 'react';
 import { Icon, Shape } from '../../../constants';
-import { Carrier as CarrierI, Parcel as ParcelI } from '../../../interfaces';
+import { Carrier as CarrierI, Parcel as ParcelI, Shipment as ShipmentI } from '../../../interfaces';
 import { Button, Dialog, Form, Input, Shipment, Svg } from '../../index';
 import './shipments.css';
 
 export interface JSXShipmentsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
 	carriers?: CarrierI[];
 	parcels?: ParcelI[];
+	shipments?: ShipmentI[];
+	onSelect?(id: string): void;
 }
 
 export function Shipments(props: JSXShipmentsElement): ReactElement {
 	const [open, setOpen] = useState(false);
-	const { carriers, children, parcels } = props;
+	const { carriers, children, onSelect, parcels, shipments } = props;
+
+	const setSelected = (event: SyntheticEvent) => {
+		const id = event.currentTarget.getAttribute('data-id');
+		if (typeof onSelect === 'function') onSelect(id ?? '');
+	};
 
 	const header = <h3 className='dialog__title'>Parcel and carrier information</h3>;
 	const body = (
@@ -38,8 +45,13 @@ export function Shipments(props: JSXShipmentsElement): ReactElement {
 				<h2>Parcel Lists</h2>
 			</header>
 			<main className='shipments__main'>
-				{parcels
-					? parcels.map((parcel) => <Shipment key={parcel.id.$oid} parcel={parcel}></Shipment>)
+				{shipments
+					? shipments.map((shipment) => (
+							<Shipment
+								key={shipment.deliveryDate}
+								shipment={shipment}
+								onClick={setSelected}></Shipment>
+					  ))
 					: children}
 			</main>
 			<footer className='shipments__footer'>

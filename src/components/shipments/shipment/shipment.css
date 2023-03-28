@@ -1,9 +1,11 @@
 .shipment {
+	align-items: center;
 	border-bottom: 0.1rem solid var(--gray-200);
 	cursor: default;
 	display: flex;
 	justify-content: space-between;
 	padding: 1rem;
+	width: 100%;
 }
 
 .shipment:hover {

@@ -1,4 +1,5 @@
 export const enum Icon {
+	BACK = 'back',
 	ERROR = 'error',
 	LAPTOP = 'laptop',
 	PLUS = 'plus',

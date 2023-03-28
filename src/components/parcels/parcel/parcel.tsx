@@ -3,16 +3,17 @@ import { Carrier as CarrierI, Parcel as ParcelI } from '../../../interfaces';
 import { Svg } from '../../svg/svg';
 import './parcel.css';
 
-export interface JSXParcelElement extends PropsWithChildren<Partial<HTMLDivElement>> {
-	parcel?: ParcelI;
+export interface JSXParcelElement extends PropsWithChildren<Partial<HTMLButtonElement>> {
 	carrier?: CarrierI;
+	parcel?: ParcelI;
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export function Parcel(props: JSXParcelElement): ReactElement {
-	const { carrier, parcel } = props;
+	const { carrier, parcel, onClick } = props;
 
 	return (
-		<div className='parcel'>
+		<button className='parcel' data-id={parcel?.id.$oid} onClick={onClick}>
 			<div className='parcel__icon'>
 				<Svg icon='truck'></Svg>
 			</div>
@@ -21,7 +22,7 @@ export function Parcel(props: JSXParcelElement): ReactElement {
 				<div className='parcel__company'>{carrier?.companyName}</div>
 				<div className='parcel__items'>{parcel?.itemsCount} items to be picked up</div>
 			</div>
-				<div className='parcel__status parcel__status--delivery'>DELIVERY</div>
-		</div>
+			<div className='parcel__status parcel__status--delivery'>DELIVERY</div>
+		</button>
 	);
 }
