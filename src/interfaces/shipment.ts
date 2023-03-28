@@ -1,4 +1,4 @@
-import { Parcel } from './index';
+import { Parcel } from '../interfaces';
 
 export interface Shipment {
 	deliveryDate: string;

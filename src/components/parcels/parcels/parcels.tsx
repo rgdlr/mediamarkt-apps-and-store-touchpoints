@@ -1,11 +1,11 @@
 import { PropsWithChildren, ReactElement, SyntheticEvent } from 'react';
+import { Parcel } from '../../../components';
 import {
 	Carrier as CarrierI,
 	Item as ItemI,
 	Parcel as ParcelI,
 	Shipment as ShipmentI
 } from '../../../interfaces';
-import { Parcel } from '../../index';
 import './parcels.css';
 
 export interface JSXParcelsElement extends PropsWithChildren<Partial<HTMLDivElement>> {

@@ -1,9 +1,9 @@
-import { Id } from "./index";
+import { Id } from '../interfaces';
 
 export interface Item {
-  id: Id;
-  type: string;
-  model: string;
-  price: number;
-  weight: number;
+	id: Id;
+	type: string;
+	model: string;
+	price: number;
+	weight: number;
 }

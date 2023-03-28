@@ -1,7 +1,7 @@
 import { PropsWithChildren, ReactElement, SyntheticEvent, useState } from 'react';
+import { Button, Dialog, Form, Input, Shipment, Svg } from '../../../components';
 import { Icon, Shape } from '../../../constants';
 import { Carrier as CarrierI, Parcel as ParcelI, Shipment as ShipmentI } from '../../../interfaces';
-import { Button, Dialog, Form, Input, Shipment, Svg } from '../../index';
 import './shipments.css';
 
 export interface JSXShipmentsElement extends PropsWithChildren<Partial<HTMLDivElement>> {

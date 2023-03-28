@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactElement, useState } from 'react';
+import { Button, Dialog, DialogSuccess, Form, Input, Item } from '../../../components';
 import { Carrier as CarrierI, Item as ItemI, Parcel as ParcelI } from '../../../interfaces';
-import { Button, Dialog, DialogSuccess, Form, Input, Item, Parcel } from '../../index';
 import './items.css';
 
 export interface JSXItemsElement extends PropsWithChildren<Partial<HTMLDivElement>> {

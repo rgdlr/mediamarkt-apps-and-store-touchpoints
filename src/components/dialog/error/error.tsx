@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
+import { Button, Dialog, Svg } from '../../../components';
 import { Position } from '../../../constants';
-import { Button, Dialog, Svg } from '../../index';
 import { CustomDialogElement } from '../dialog';
 
 export function DialogError(props: CustomDialogElement): ReactElement {
