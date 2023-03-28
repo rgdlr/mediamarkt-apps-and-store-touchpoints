@@ -45,14 +45,15 @@ export function Shipments(props: JSXShipmentsElement): ReactElement {
 				<h2>Parcel Lists</h2>
 			</header>
 			<main className='shipments__main'>
-				{shipments
-					? shipments.map((shipment) => (
-							<Shipment
-								key={shipment.deliveryDate}
-								shipment={shipment}
-								onClick={setSelected}></Shipment>
-					  ))
-					: children}
+				<ul>
+					{shipments
+						? shipments.map((shipment) => (
+								<li key={shipment.deliveryDate}>
+									<Shipment shipment={shipment} onClick={setSelected}></Shipment>
+								</li>
+						  ))
+						: children}
+				</ul>
 			</main>
 			<footer className='shipments__footer'>
 				<Button shape={Shape.CIRCLE} onClick={() => setOpen(true)}>

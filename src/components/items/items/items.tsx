@@ -60,7 +60,15 @@ export function Items(props: JSXItemsElement): ReactElement {
 				<h2>{parcel?.id.$oid.toUpperCase()} Parcel List</h2>
 			</header>
 			<main className='parcels__main'>
-				{items ? items.map((item) => <Item key={item.id.$oid} item={item}></Item>) : children}
+				<ul>
+					{items
+						? items.map((item) => (
+								<li key={item.id.$oid}>
+									<Item item={item}></Item>
+								</li>
+						  ))
+						: children}
+				</ul>
 			</main>
 			<footer className='parcels__footer'>
 				<Button onClick={() => setIsDeliveryInformationDialogOpen(true)}>DELIVERY</Button>

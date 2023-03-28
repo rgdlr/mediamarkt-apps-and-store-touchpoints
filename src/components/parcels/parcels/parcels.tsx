@@ -31,11 +31,15 @@ export function Parcels(props: JSXParcelsElement): ReactElement {
 					<h2>Parcel List {shipment?.deliveryDate}</h2>
 				</header>
 				<main className='parcels__main'>
-					{shipment
-						? shipment.parcels.map((parcel) => (
-								<Parcel key={parcel.id.$oid} parcel={parcel} onClick={setSelected}></Parcel>
-						  ))
-						: children}
+					<ul>
+						{shipment
+							? shipment.parcels.map((parcel) => (
+									<li key={parcel.id.$oid}>
+										<Parcel parcel={parcel} onClick={setSelected}></Parcel>
+									</li>
+							  ))
+							: children}
+					</ul>
 				</main>
 			</section>
 		</>
