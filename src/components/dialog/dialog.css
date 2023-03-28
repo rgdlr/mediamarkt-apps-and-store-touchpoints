@@ -3,7 +3,6 @@
 	display: flex;
 	inset: 0;
 	margin-inline: auto;
-	max-width: 50rem;
 	opacity: 0;
 	position: fixed;
 	visibility: hidden;
