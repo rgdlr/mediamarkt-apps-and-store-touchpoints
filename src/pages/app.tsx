@@ -6,9 +6,9 @@ import { Carrier, Item, Parcel, Shipment } from '../interfaces';
 import { getShipmentsFromParcels } from '../services/shipments';
 
 export function App(): JSX.Element {
-	const { data: carriers } = useFetch<Carrier[]>('src/mocks/carriers.json');
-	const { data: items } = useFetch<Item[]>('src/mocks/items.json');
-	const { data: parcels } = useFetch<Parcel[]>('src/mocks/parcels.json');
+	const { data: carriers } = useFetch<Carrier[]>('carriers.json');
+	const { data: items } = useFetch<Item[]>('items.json');
+	const { data: parcels } = useFetch<Parcel[]>('parcels.json');
 
 	const [step, setStep] = useState<Step>(Step.SHIPMENTS);
 	const [shipments, setShipments] = useState<Shipment[]>([]);
