@@ -18,6 +18,10 @@ Use the package manager [npm](https://www.npmjs.com/) to run project in local se
 npm run dev
 ```
 
+## Demo
+
+Visit an app demo at [website](https://rgdlr.github.io/mm-st).
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
