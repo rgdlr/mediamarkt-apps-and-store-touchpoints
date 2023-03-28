@@ -1,0 +1,31 @@
+.item {
+	align-items: center;
+	border-bottom: 0.1rem solid var(--gray-200);
+	cursor: default;
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.item:hover {
+	background-color: var(--gray-200);
+}
+
+.item__icon {
+	background-color: var(--red-200);
+	border-radius: 0.5rem;
+	display: grid;
+	height: 3.125rem;
+	place-content: center;
+	width: 3.125rem;
+}
+
+.item__information {
+	flex-grow: 1;
+	line-height: 1.25;
+}
+
+.item__weight {
+	font-size: 0.75rem;
+}

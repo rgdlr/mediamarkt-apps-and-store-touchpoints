@@ -12,6 +12,7 @@ export interface CustomDialogElement extends JSXDialogElement {
 	header?: ReactElement;
 	open?: boolean;
 	position?: Position;
+	onClose?: () => void;
 }
 
 export function Dialog(props: CustomDialogElement): ReactElement {

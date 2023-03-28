@@ -1,10 +1,20 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { Position } from '../../../constants';
 import { Button, Dialog, Svg } from '../../index';
 import { CustomDialogElement } from '../dialog';
 
 export function DialogError(props: CustomDialogElement): ReactElement {
-	const [open, setOpen] = useState(props.open);
+	const { open, onClose } = props;
+	const [isOpen, setIsOpen] = useState(props.open);
+
+	useEffect(() => {
+		setIsOpen(open);
+	}, [open]);
+
+	const closeDialog = () => {
+		if (typeof onClose === 'function') onClose();
+		setIsOpen(false);
+	};
 
 	const body = (
 		<>
@@ -15,7 +25,7 @@ export function DialogError(props: CustomDialogElement): ReactElement {
 		</>
 	);
 
-	const footer = <Button onClick={() => setOpen(false)}>BACK</Button>;
+	const footer = <Button onClick={closeDialog}>BACK</Button>;
 
-	return <Dialog body={body} footer={footer} open={open} position={Position.CENTER}></Dialog>;
+	return <Dialog body={body} footer={footer} open={isOpen} position={Position.CENTER}></Dialog>;
 }
