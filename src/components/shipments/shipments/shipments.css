@@ -1,4 +1,4 @@
-.products {
+.shipments {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -7,7 +7,7 @@
 	max-width: 50rem;
 }
 
-.products__header {
+.shipments__header {
 	background-color: var(--white-100);
 	font-size: 1.5rem;
 	padding-block: 2rem;
@@ -15,11 +15,11 @@
 	top: 0;
 }
 
-.products__main {
+.shipments__main {
 	flex-grow: 1;
 }
 
-.products__footer {
+.shipments__footer {
 	background-color: var(--white-100);
 	bottom: 0;
 	display: flex;

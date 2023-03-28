@@ -2,14 +2,14 @@ import { PropsWithChildren, ReactElement, useState } from 'react';
 import { Icon, Shape } from '../../../constants';
 import { Carrier as CarrierI, Parcel as ParcelI } from '../../../interfaces';
 import { Button, Dialog, Form, Input, Parcel, Select, Svg } from '../../index';
-import './products.css';
+import './shipments.css';
 
-export interface JSXProductsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
+export interface JSXShipmentsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
 	carriers?: CarrierI[];
 	parcels?: ParcelI[];
 }
 
-export function Products(props: JSXProductsElement): ReactElement {
+export function Shipments(props: JSXShipmentsElement): ReactElement {
 	const [open, setOpen] = useState(false);
 	const { carriers, children, parcels } = props;
 
@@ -33,16 +33,16 @@ export function Products(props: JSXProductsElement): ReactElement {
 	const footer = <Button onClick={() => setOpen(false)}>ADD</Button>;
 
 	return (
-		<section className='parcels'>
-			<header className='parcels__header'>
+		<section className='shipments'>
+			<header className='shipments__header'>
 				<h2>Parcel Lists</h2>
 			</header>
-			<main className='parcels__main'>
+			<main className='shipments__main'>
 				{parcels
 					? parcels.map((parcel) => <Parcel key={parcel.id.$oid} parcel={parcel}></Parcel>)
 					: children}
 			</main>
-			<footer className='parcels__footer'>
+			<footer className='shipments__footer'>
 				<Button shape={Shape.CIRCLE} onClick={() => setOpen(true)}>
 					<Svg icon={Icon.PLUS}></Svg>
 				</Button>

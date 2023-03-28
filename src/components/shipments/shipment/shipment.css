@@ -1,4 +1,4 @@
-.product {
+.shipment {
 	border-bottom: 0.1rem solid var(--gray-200);
 	cursor: default;
 	display: flex;
@@ -6,20 +6,20 @@
 	padding: 1rem;
 }
 
-.product:hover {
+.shipment:hover {
 	background-color: var(--gray-200);
 }
 
-.product__information {
+.shipment__information {
 	line-height: 1.25;
 }
 
-.product__carriers,
-.product__items {
+.shipment__carriers,
+.shipment__items {
 	font-size: 0.8rem;
 }
 
-.product__date {
+.shipment__date {
 	color: var(--red-100);
 	display: grid;
 	font-size: 0.8rem;
