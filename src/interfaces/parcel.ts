@@ -1,4 +1,4 @@
-import { Id } from "./id";
+import { Id } from "./index";
 
 export interface Parcel {
   id: Id;
