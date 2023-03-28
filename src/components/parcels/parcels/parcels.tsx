@@ -25,23 +25,21 @@ export function Parcels(props: JSXParcelsElement): ReactElement {
 	};
 
 	return (
-		<>
-			<section className='parcels'>
-				<header className='parcels__header'>
-					<h2>Parcel List {shipment?.deliveryDate}</h2>
-				</header>
-				<main className='parcels__main'>
-					<ul>
-						{shipment
-							? shipment.parcels.map((parcel) => (
-									<li key={parcel.id.$oid}>
-										<Parcel parcel={parcel} onClick={setSelected}></Parcel>
-									</li>
-							  ))
-							: children}
-					</ul>
-				</main>
-			</section>
-		</>
+		<section className='parcels'>
+			<header className='parcels__header'>
+				<h2>Parcel List {shipment?.deliveryDate}</h2>
+			</header>
+			<main className='parcels__main'>
+				<ul>
+					{shipment
+						? shipment.parcels.map((parcel) => (
+								<li key={parcel.id.$oid}>
+									<Parcel parcel={parcel} onClick={setSelected}></Parcel>
+								</li>
+						  ))
+						: children}
+				</ul>
+			</main>
+		</section>
 	);
 }
