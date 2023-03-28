@@ -28,6 +28,7 @@
 .dialog__window {
 	background-color: var(--white-100);
 	margin-inline: auto;
+	max-width: 50rem;
 	padding: 2rem;
 	transform: translateY(100%);
 
