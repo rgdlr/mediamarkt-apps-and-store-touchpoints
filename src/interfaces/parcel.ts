@@ -2,9 +2,9 @@ import { Id } from "./index";
 
 export interface Parcel {
   id: Id;
-  deliveryAdress: string;
+  deliveryAddress: string;
   deliveryDate: string;
-  pickupAdress: string;
+  pickupAddress: string;
   pickupDate: string;
   itemsCount: number;
   items: Id[];

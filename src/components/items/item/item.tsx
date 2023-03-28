@@ -17,7 +17,7 @@ export function Item(props: JSXItemElement): ReactElement {
 			</div>
 			<div className='item__information'>
 				<div className='item__title'>{item?.id.$oid.toUpperCase()}</div>
-				<div className='item__weight'>{item?.weigth}kg</div>
+				<div className='item__weight'>{item?.weight}kg</div>
 			</div>
 		</div>
 	);

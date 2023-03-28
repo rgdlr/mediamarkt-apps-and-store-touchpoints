@@ -5,5 +5,5 @@ export interface Carrier {
   companyName: string;
   driver: string;
   licensePlate: string;
-  centerAdress: string;
+  centerAddress: string;
 }

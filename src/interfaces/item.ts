@@ -5,5 +5,5 @@ export interface Item {
   type: string;
   model: string;
   price: number;
-  weigth: number;
+  weight: number;
 }
