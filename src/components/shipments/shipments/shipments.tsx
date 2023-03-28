@@ -1,7 +1,7 @@
 import { PropsWithChildren, ReactElement, useState } from 'react';
 import { Icon, Shape } from '../../../constants';
 import { Carrier as CarrierI, Parcel as ParcelI } from '../../../interfaces';
-import { Button, Dialog, Form, Input, Parcel, Select, Svg } from '../../index';
+import { Button, Dialog, Form, Input, Shipment, Svg } from '../../index';
 import './shipments.css';
 
 export interface JSXShipmentsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
@@ -39,7 +39,7 @@ export function Shipments(props: JSXShipmentsElement): ReactElement {
 			</header>
 			<main className='shipments__main'>
 				{parcels
-					? parcels.map((parcel) => <Parcel key={parcel.id.$oid} parcel={parcel}></Parcel>)
+					? parcels.map((parcel) => <Shipment key={parcel.id.$oid} parcel={parcel}></Shipment>)
 					: children}
 			</main>
 			<footer className='shipments__footer'>

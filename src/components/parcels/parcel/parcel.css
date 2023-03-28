@@ -1,7 +1,9 @@
 .parcel {
+	align-items: center;
 	border-bottom: 0.1rem solid var(--gray-200);
 	cursor: default;
 	display: flex;
+	gap: 1rem;
 	justify-content: space-between;
 	padding: 1rem;
 }
@@ -10,18 +12,36 @@
 	background-color: var(--gray-200);
 }
 
+.parcel__icon {
+	background-color: var(--red-200);
+	border-radius: 0.5rem;
+	display: grid;
+	height: 3.125rem;
+	place-content: center;
+	width: 3.125rem;
+}
+
 .parcel__information {
+	flex-grow: 1;
 	line-height: 1.25;
 }
 
-.parcel__carriers,
+.parcel__title,
+.parcel__company,
 .parcel__items {
 	font-size: 0.8rem;
 }
 
-.parcel__date {
-	color: var(--red-100);
+.parcel__status {
 	display: grid;
 	font-size: 0.8rem;
 	place-content: center;
+}
+
+.parcel__status.parcel__status--delivery {
+	color: var(--red-100);
+}
+
+.parcel__status.parcel__status--delivered {
+	color: var(--gray-300);
 }
