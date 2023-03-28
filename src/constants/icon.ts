@@ -1,5 +1,9 @@
 export const enum Icon {
-	CHECK = 'check',
 	ERROR = 'error',
-	PLUS = 'plus'
+	LAPTOP = 'laptop',
+	PLUS = 'plus',
+	SMARTPHONE = 'smartphone',
+	SMARTWATCH = 'smartwatch',
+	SUCCESS = 'success',
+	TRUCK = 'truck'
 }
