@@ -16,8 +16,14 @@ export function App(): JSX.Element {
 	const [selectedParcelId, setSelectedParcelId] = useState<string>('');
 
 	function setStepBack() {
-		if (step === Step.PARCELS) setStep(Step.SHIPMENTS);
-		if (step === Step.ITEMS) setStep(Step.PARCELS);
+		if (step === Step.PARCELS) {
+			setSelectedShipmentDate('');
+			setStep(Step.SHIPMENTS);
+		}
+		if (step === Step.ITEMS) {
+			setSelectedParcelId('');
+			setStep(Step.PARCELS);
+		}
 	}
 
 	function getShipmentFromDate() {
