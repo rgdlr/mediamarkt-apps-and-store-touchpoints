@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactElement } from 'react';
+import { CSSProperties, PropsWithChildren, ReactElement } from 'react';
 import { Position } from '../../../constants';
 import './label.css';
 
@@ -8,9 +8,14 @@ export type JSXLabelElement = PropsWithChildren<
 
 export interface CustomLabelElement extends JSXLabelElement {
 	position?: Position;
+	style?: CSSProperties;
 }
 
 export function Label(props: CustomLabelElement): ReactElement {
-	const { children, position = Position.BOTTOM } = props;
-	return <label className={`label label--${position}`}>{children}</label>;
+	const { children, className, position = Position.BOTTOM, style } = props;
+	return (
+		<label className={`label label--${position} ${className}`} style={style}>
+			{children}
+		</label>
+	);
 }

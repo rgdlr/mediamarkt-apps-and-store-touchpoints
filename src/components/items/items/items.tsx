@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactElement, useState } from 'react';
-import { Button, Dialog, DialogSuccess, Form, Input, Item } from '../../../components';
+import { Button, Dialog, DialogSuccess, Form, Input, Item, Label } from '../../../components';
 import { Carrier as CarrierI, Item as ItemI, Parcel as ParcelI } from '../../../interfaces';
 import './items.css';
 
@@ -10,17 +10,19 @@ export interface JSXItemsElement extends PropsWithChildren<Partial<HTMLDivElemen
 }
 
 export function Items(props: JSXItemsElement): ReactElement {
+	const { carrier, children, items, parcel } = props;
 	const [isDeliveryInformationDialogOpen, setIsDeliveryInformationDialogOpen] = useState(false);
 	const [isDriversSignatureDialogOpen, setIsDriversSignatureDialogOpen] = useState(false);
 	const [isSuccessDialogOpen, setIsSuccessDialogOpen] = useState(false);
-	const { carrier, children, items, parcel } = props;
 
 	const deliveryInformationDialog = {
 		header: <h3 className='dialog__title'>Delivery information</h3>,
 		body: (
 			<Form>
-				<Input label="Driver's name" value={carrier?.driver} readOnly></Input>
-				<Input label='License plate' value={carrier?.licensePlate.toUpperCase()} readOnly></Input>
+				<Label>Driver's name</Label>
+				<Input value={carrier?.driver} readOnly></Input>
+				<Label>License plate</Label>
+				<Input value={carrier?.licensePlate.toUpperCase()} readOnly></Input>
 			</Form>
 		),
 		footer: (
@@ -38,9 +40,8 @@ export function Items(props: JSXItemsElement): ReactElement {
 		header: <h3 className='dialog__title'>Delivery information</h3>,
 		body: (
 			<Form>
-				<Input
-					style={{ backgroundColor: 'var(--blue-100)', height: '12rem' }}
-					label="Driver's signature"></Input>
+				<Label className='label--signature'>Driver's signature</Label>
+				<Input className='input--signature'></Input>
 			</Form>
 		),
 		footer: (
@@ -55,11 +56,11 @@ export function Items(props: JSXItemsElement): ReactElement {
 	};
 
 	return (
-		<section className='parcels'>
-			<header className='parcels__header'>
+		<section className='items'>
+			<header className='items__header'>
 				<h2>{parcel?.id.$oid.toUpperCase()} Parcel List</h2>
 			</header>
-			<main className='parcels__main'>
+			<main className='items__main'>
 				<ul>
 					{items
 						? items.map((item) => (
@@ -70,7 +71,7 @@ export function Items(props: JSXItemsElement): ReactElement {
 						: children}
 				</ul>
 			</main>
-			<footer className='parcels__footer'>
+			<footer className='items__footer'>
 				<Button onClick={() => setIsDeliveryInformationDialogOpen(true)}>DELIVERY</Button>
 			</footer>
 			<Dialog

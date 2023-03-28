@@ -1,5 +1,5 @@
-import { PropsWithChildren, ReactElement, SyntheticEvent, useState } from 'react';
-import { Button, Dialog, Form, Input, Shipment, Svg } from '../../../components';
+import { BaseSyntheticEvent, PropsWithChildren, ReactElement, useState } from 'react';
+import { Button, Dialog, Form, Input, Label, Shipment, Svg } from '../../../components';
 import { Icon, Shape } from '../../../constants';
 import { Carrier as CarrierI, Parcel as ParcelI, Shipment as ShipmentI } from '../../../interfaces';
 import './shipments.css';
@@ -12,10 +12,10 @@ export interface JSXShipmentsElement extends PropsWithChildren<Partial<HTMLDivEl
 }
 
 export function Shipments(props: JSXShipmentsElement): ReactElement {
-	const [open, setOpen] = useState(false);
 	const { carriers, children, onSelect, parcels, shipments } = props;
+	const [open, setOpen] = useState(false);
 
-	const setSelected = (event: SyntheticEvent) => {
+	const setSelected = (event: BaseSyntheticEvent) => {
 		const id = event.currentTarget.getAttribute('data-id');
 		if (typeof onSelect === 'function') onSelect(id ?? '');
 	};
@@ -23,8 +23,10 @@ export function Shipments(props: JSXShipmentsElement): ReactElement {
 	const header = <h3 className='dialog__title'>Parcel and carrier information</h3>;
 	const body = (
 		<Form>
-			<Input label='ID' list={'parcel-id' as unknown as HTMLElement}></Input>
-			<Input label='Carrier ID' list={'carrier-id' as unknown as HTMLElement}></Input>
+			<Label>ID</Label>
+			<Input list={'parcel-id' as unknown as HTMLElement}></Input>
+			<Label>Carrier ID</Label>
+			<Input list={'carrier-id' as unknown as HTMLElement}></Input>
 			<datalist id='carrier-id'>
 				{carriers?.map((carrier) => (
 					<option key={carrier.id.$oid} value={carrier.id.$oid.toUpperCase()}></option>

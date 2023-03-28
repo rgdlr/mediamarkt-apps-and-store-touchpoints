@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactElement, SyntheticEvent } from 'react';
+import { BaseSyntheticEvent, PropsWithChildren, ReactElement } from 'react';
 import { Parcel } from '../../../components';
 import {
 	Carrier as CarrierI,
@@ -19,7 +19,7 @@ export interface JSXParcelsElement extends PropsWithChildren<Partial<HTMLDivElem
 export function Parcels(props: JSXParcelsElement): ReactElement {
 	const { children, onSelect, shipment } = props;
 
-	const setSelected = (event: SyntheticEvent) => {
+	const setSelected = (event: BaseSyntheticEvent) => {
 		const id = event.currentTarget.getAttribute('data-id');
 		if (typeof onSelect === 'function') onSelect(id ?? '');
 	};

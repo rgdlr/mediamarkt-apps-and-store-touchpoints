@@ -1,12 +1,16 @@
 .item {
 	align-items: center;
-	border-bottom: 0.1rem solid var(--gray-200);
 	cursor: default;
 	display: flex;
 	gap: 1rem;
 	justify-content: space-between;
 	padding: 1rem;
 }
+
+li:not(:last-child) .item {
+	border-bottom: 0.1rem solid var(--gray-200);
+}
+
 
 .item:hover {
 	background-color: var(--gray-200);

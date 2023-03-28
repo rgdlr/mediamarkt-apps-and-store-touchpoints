@@ -1,12 +1,15 @@
 .parcel {
 	align-items: center;
-	border-bottom: 0.1rem solid var(--gray-200);
 	cursor: default;
 	display: flex;
 	gap: 1rem;
 	justify-content: space-between;
 	padding: 1rem;
 	width: 100%;
+}
+
+li:not(:last-child) .parcel {
+	border-bottom: 0.1rem solid var(--gray-200);
 }
 
 .parcel:hover {
@@ -39,10 +42,10 @@
 	place-content: center;
 }
 
-.parcel__status.parcel__status--delivery {
+.parcel__status--delivery {
 	color: var(--red-100);
 }
 
-.parcel__status.parcel__status--delivered {
+.parcel__status--delivered {
 	color: var(--gray-300);
 }

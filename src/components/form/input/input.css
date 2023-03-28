@@ -6,6 +6,7 @@
 	width: 100%;
 }
 
-.input ~ :not(.label.label--bottom) {
-	margin-bottom: 1rem;
+.input--signature {
+	background-color: var(--blue-100);
+	height: 12rem;
 }
