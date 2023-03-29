@@ -1,20 +1,13 @@
-import { CSSProperties, PropsWithChildren, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Position } from '../../../constants';
+import { computeClassNames } from '../../../utils';
+import { LabelAttributes } from './types.d';
 import './index.css';
 
-export type JSXLabelElement = PropsWithChildren<
-	Omit<Omit<Partial<HTMLLabelElement>, 'children'>, 'style'>
->;
-
-export interface CustomLabelElement extends JSXLabelElement {
-	position?: Position;
-	style?: CSSProperties;
-}
-
-export function Label(attributes: CustomLabelElement): ReactElement {
-	const { children, className, position = Position.BOTTOM, style } = attributes;
+export function Label(attributes: LabelAttributes): ReactElement {
+	const { children, className, position = Position.BOTTOM } = attributes;
 	return (
-		<label className={`label label--${position} ${className}`} style={style}>
+		<label {...attributes} className={computeClassNames('label', `label--${position}`, className)}>
 			{children}
 		</label>
 	);

@@ -4,7 +4,7 @@ import { Position } from '../../../constants';
 import { DialogAttributes } from '../types.d';
 
 export function DialogSuccess(attributes: DialogAttributes): ReactElement {
-	const { open } = attributes;
+	const { open, position = Position.CENTER } = attributes;
 	const [isOpen, setIsOpen] = useState(open);
 
 	useEffect(() => {
@@ -26,5 +26,7 @@ export function DialogSuccess(attributes: DialogAttributes): ReactElement {
 
 	const footer = <Button onClick={closeDialog}>GO TO PARCEL LIST</Button>;
 
-	return <Dialog body={body} footer={footer} open={isOpen} position={Position.CENTER}></Dialog>;
+	return (
+		<Dialog {...attributes} body={body} footer={footer} open={isOpen} position={position}></Dialog>
+	);
 }
