@@ -4,7 +4,7 @@ import './index.css';
 import { ParcelAttributes } from './types.d';
 
 export function Parcel(attributes: ParcelAttributes): ReactElement {
-	const { carrier, parcel, onClick } = attributes;
+	const { carrier, parcel } = attributes;
 
 	return (
 		<button {...attributes} className='parcel' data-id={parcel?.id.$oid}>

@@ -1,3 +1,3 @@
 import { InputHTMLAttributes } from 'react';
 
-export interface CustomInputAttributes extends InputHTMLAttributes<HTMLInputElement> {}
+export type CustomInputAttributes = InputHTMLAttributes<HTMLInputElement>

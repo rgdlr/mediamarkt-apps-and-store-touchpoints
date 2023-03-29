@@ -1,3 +1,3 @@
 import { HTMLAttributes } from 'react';
 
-export interface CustomTrackingAttributes extends HTMLAttributes<HTMLDivElement> {}
+export type CustomTrackingAttributes = HTMLAttributes<HTMLDivElement>

@@ -70,7 +70,7 @@ export function Items(attributes: ItemsAttributes): ReactElement {
 								<li key={item.id.$oid}>
 									<Item item={item}></Item>
 								</li>
-						  ))
+							))
 						: children}
 				</ul>
 			</main>

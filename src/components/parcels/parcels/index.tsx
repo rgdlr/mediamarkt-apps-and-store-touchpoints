@@ -23,7 +23,7 @@ export function Parcels(attributes: ParcelsAttributes): ReactElement {
 								<li key={parcel.id.$oid}>
 									<Parcel parcel={parcel} onClick={setSelected}></Parcel>
 								</li>
-						  ))
+							))
 						: children}
 				</ul>
 			</main>

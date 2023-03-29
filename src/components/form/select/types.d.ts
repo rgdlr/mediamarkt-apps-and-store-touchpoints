@@ -1,3 +1,3 @@
 import { SelectHTMLAttributes } from 'react';
 
-export interface CustomSelectAttributes extends SelectHTMLAttributes<HTMLSelectElement> {}
+export type CustomSelectAttributes = SelectHTMLAttributes<HTMLSelectElement>

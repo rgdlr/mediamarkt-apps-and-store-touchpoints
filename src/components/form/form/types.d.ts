@@ -1,3 +1,3 @@
 import { FormHTMLAttributes } from 'react';
 
-export interface CustomFormAttributes extends FormHTMLAttributes<HTMLFormElement> {}
+export type CustomFormAttributes = FormHTMLAttributes<HTMLFormElement>
