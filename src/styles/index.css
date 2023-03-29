@@ -8,6 +8,7 @@ html {
 }
 
 #root {
+	background-color: var(--white-100);
 	margin-inline: auto;
 	max-width: 50rem;
 	position: relative;
