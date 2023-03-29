@@ -1,21 +1,16 @@
-import { CSSProperties, PropsWithChildren, ReactElement } from 'react';
+import { ButtonHTMLAttributes, ReactElement } from 'react';
 import { Shape } from '../../constants';
 import './button.css';
 
-export type JSXButtonElement = PropsWithChildren<
-	Omit<Omit<Partial<HTMLButtonElement>, 'children'>, 'style'>
->;
-
-export interface CustomButtonElement extends JSXButtonElement {
-	onClick?: React.MouseEventHandler<HTMLButtonElement>;
+export interface ButtonAttributes extends ButtonHTMLAttributes<HTMLButtonElement> {
 	shape?: Shape;
-	style?: CSSProperties;
 }
 
-export function Button(props: CustomButtonElement): ReactElement {
-	const { children, onClick, shape = Shape.RECTANGLE, style } = props;
+export function Button(attributes: ButtonAttributes): ReactElement {
+	const { children, className, shape = Shape.RECTANGLE } = attributes;
+	const computedClassName = `button button--${shape} ${className ?? ''}`.trim();
 	return (
-		<button style={style} className={`button button--${shape}`} onClick={onClick}>
+		<button {...attributes} className={computedClassName}>
 			{children}
 		</button>
 	);
