@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Button, Items, Parcels, Shipments, Svg } from '../components';
+import { Button, Svg } from '../components';
 import { Icon, Shape, Step } from '../constants';
 import { useFetch } from '../hooks';
 import { Carrier, Item, Parcel, Shipment } from '../interfaces';
-import { getShipmentsFromParcels } from '../services/shipments';
+import { Items, Parcels, Shipments } from '.';
+import { getShipmentsFromParcels } from '../services';
 
 export function App(): JSX.Element {
 	const { data: carriers } = useFetch<Carrier[]>('carriers.json');

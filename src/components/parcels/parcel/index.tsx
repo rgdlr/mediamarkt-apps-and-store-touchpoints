@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Svg } from '../../../components';
+import { Svg } from '../..';
 import { ParcelAttributes } from './types';
 import './index.css';
 

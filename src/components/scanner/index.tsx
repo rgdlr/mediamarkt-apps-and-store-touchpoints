@@ -1,7 +1,9 @@
 import { ReactElement } from 'react';
-import { ScannerAttributes } from './types';
+import { CustomScannerAttributes } from '../../components/types';
 import './index.css';
 
-export function Scanner(attributes: ScannerAttributes): ReactElement {
-	return <></>;
+export function Scanner(attributes: CustomScannerAttributes): ReactElement {
+	return <input {...attributes}></input>;
 }
+
+export type { CustomScannerAttributes };

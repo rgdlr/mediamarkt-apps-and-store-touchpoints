@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
-import { FormAttributes } from './types.d';
+import { CustomFormAttributes } from '../../../components/types.d';
 import { computeClassNames } from '../../../utils';
 import './index.css';
 
-export function Form(attributes: FormAttributes): ReactElement {
+export function Form(attributes: CustomFormAttributes): ReactElement {
 	const { children, className } = attributes;
 	return (
 		<form {...attributes} className={computeClassNames('form', className)}>
@@ -11,3 +11,5 @@ export function Form(attributes: FormAttributes): ReactElement {
 		</form>
 	);
 }
+
+export type { CustomFormAttributes };

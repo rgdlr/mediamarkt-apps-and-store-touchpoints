@@ -1,7 +1,8 @@
 import { MouseEvent, ReactElement, TouchEvent, useEffect, useRef, useState } from 'react';
-import { CanvasAttributes } from './types.d';
+import { CustomCanvasAttributes } from '../../components/types.d';
+import './index.css';
 
-export function Canvas(attributes: CanvasAttributes): ReactElement {
+export function Canvas(attributes: CustomCanvasAttributes): ReactElement {
 	const {
 		children,
 		globalAlpha = 1,
@@ -80,4 +81,4 @@ export function Canvas(attributes: CanvasAttributes): ReactElement {
 	);
 }
 
-export type { CanvasAttributes };
+export type { CustomCanvasAttributes };

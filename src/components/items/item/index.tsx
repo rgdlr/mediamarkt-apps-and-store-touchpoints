@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
-import { Svg } from '../../../components';
-import { ItemAttributes } from './types';
+import { Svg } from '../..';
 import './index.css';
+import { ItemAttributes } from './types';
 
 export function Item(attributes: ItemAttributes): ReactElement {
 	const { item } = attributes;
@@ -18,3 +18,5 @@ export function Item(attributes: ItemAttributes): ReactElement {
 		</div>
 	);
 }
+
+export type { ItemAttributes };

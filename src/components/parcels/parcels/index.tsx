@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, ReactElement } from 'react';
-import { Parcel } from '../../../components';
+import { Parcel } from '../..';
 import { ParcelsAttributes } from './types';
 import './index.css';
 

@@ -1,9 +1,9 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { Button, Dialog, Svg } from '../../../components';
+import { CustomDialogAttributes } from '../../../components/types.d';
 import { Position } from '../../../constants';
-import { DialogAttributes } from '../types.d';
 
-export function DialogError(attributes: DialogAttributes): ReactElement {
+export function DialogError(attributes: CustomDialogAttributes): ReactElement {
 	const { open, position = Position.CENTER } = attributes;
 	const [isOpen, setIsOpen] = useState(open);
 

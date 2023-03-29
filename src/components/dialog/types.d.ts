@@ -1,6 +1,6 @@
 import { DialogHTMLAttributes } from 'react';
 
-export interface DialogAttributes extends DialogHTMLAttributes<HTMLDialogElement> {
+export interface CustomDialogAttributes extends DialogHTMLAttributes<HTMLDialogElement> {
 	body?: ReactElement;
 	footer?: ReactElement;
 	header?: ReactElement;	

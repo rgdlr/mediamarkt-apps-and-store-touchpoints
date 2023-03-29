@@ -8,7 +8,7 @@ import {
 	Item,
 	Label,
 	Signature
-} from '../../../components';
+} from '../..';
 import './index.css';
 import { ItemsAttributes } from './types';
 

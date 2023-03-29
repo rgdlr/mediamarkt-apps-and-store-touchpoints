@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
-import { SelectAttributes } from './types.d';
+import { CustomSelectAttributes } from '../../../components/types.d';
 import './index.css';
 
-export function Select(attributes: SelectAttributes): ReactElement {
+export function Select(attributes: CustomSelectAttributes): ReactElement {
 	const { children } = attributes;
 	return (
 		<select {...attributes} className='select'>
@@ -10,3 +10,5 @@ export function Select(attributes: SelectAttributes): ReactElement {
 		</select>
 	);
 }
+
+export type { CustomSelectAttributes };

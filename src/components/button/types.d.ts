@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
 
-export interface ButtonAttributes extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface CustomButtonAttributes extends ButtonHTMLAttributes<HTMLButtonElement> {
 	shape?: Shape;
 }

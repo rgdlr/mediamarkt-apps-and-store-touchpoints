@@ -1,7 +1,3 @@
 import { CanvasHTMLAttributes } from 'react';
 
-export interface CanvasAttributes
-	extends CanvasHTMLAttributes<HTMLCanvasElement>,
-		Partial<CanvasRenderingContext2D> {
-	drawable?: boolean;
-}
+export interface CustomCanvasAttributes extends CanvasHTMLAttributes<HTMLCanvasElement>, Partial<CanvasRenderingContext2D> {}

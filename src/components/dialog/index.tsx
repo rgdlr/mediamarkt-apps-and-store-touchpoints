@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
 import { Position } from '../../constants';
-import { DialogAttributes } from './types.d';
-import './index.css';
 import { computeClassNames } from '../../utils';
+import { CustomDialogAttributes } from '../../components/types.d';
+import './index.css';
 
-export function Dialog(attributes: DialogAttributes): ReactElement {
+export function Dialog(attributes: CustomDialogAttributes): ReactElement {
 	const { body, children, className, footer, header, position = Position.BOTTOM } = attributes;
 	return (
 		<dialog
@@ -22,3 +22,4 @@ export function Dialog(attributes: DialogAttributes): ReactElement {
 
 export { DialogError } from './error';
 export { DialogSuccess } from './success';
+export type { CustomDialogAttributes };

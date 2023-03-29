@@ -1,5 +1,5 @@
 import { LabelHTMLAttributes } from 'react';
 
-export interface LabelAttributes extends LabelHTMLAttributes<HTMLLabelElement> {
+export interface CustomLabelAttributes extends LabelHTMLAttributes<HTMLLabelElement> {
   position?: Position;
 }

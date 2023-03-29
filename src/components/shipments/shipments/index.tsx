@@ -1,5 +1,5 @@
 import { BaseSyntheticEvent, ReactElement, useState } from 'react';
-import { Button, Dialog, Form, Input, Label, Shipment, Svg } from '../../../components';
+import { Button, Dialog, Form, Input, Label, Shipment, Svg } from '../..';
 import { Icon, Shape } from '../../../constants';
 import { ShipmentsAttributes } from './types';
 import './index.css';

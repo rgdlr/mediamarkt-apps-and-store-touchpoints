@@ -1,3 +1,3 @@
-import { InputAttributes } from '../form/input/types';
+import { InputAttributes } from '../../components/types.d';
 
-export interface ScannerAttributes extends InputAttributes {}
+export interface CustomScannerAttributes extends InputAttributes {}
