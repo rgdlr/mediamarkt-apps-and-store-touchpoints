@@ -12,7 +12,7 @@
 	transition-timing-function: ease;
 }
 
-.dialog--open {
+.dialog[open] {
 	opacity: 1;
 	visibility: visible;
 }
@@ -36,7 +36,7 @@
 	transition-timing-function: ease;
 }
 
-.dialog--open .dialog__window {
+.dialog[open] .dialog__window {
 	transform: translateY(0);
 }
 

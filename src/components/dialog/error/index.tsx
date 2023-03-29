@@ -1,18 +1,17 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { Button, Dialog, Svg } from '../../../components';
 import { Position } from '../../../constants';
-import { CustomDialogElement } from '../../dialog';
+import { DialogAttributes } from '../types.d';
 
-export function DialogError(props: CustomDialogElement): ReactElement {
-	const { open, onClose } = props;
-	const [isOpen, setIsOpen] = useState(props.open);
+export function DialogError(attributes: DialogAttributes): ReactElement {
+	const { open } = attributes;
+	const [isOpen, setIsOpen] = useState(open);
 
 	useEffect(() => {
 		setIsOpen(open);
 	}, [open]);
 
 	const closeDialog = () => {
-		if (typeof onClose === 'function') onClose();
 		setIsOpen(false);
 	};
 

@@ -1,10 +1,10 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { Button, Dialog, Svg } from '../../../components';
 import { Position } from '../../../constants';
-import { CustomDialogElement } from '../../dialog';
+import { DialogAttributes } from '../types.d';
 
-export function DialogSuccess(props: CustomDialogElement): ReactElement {
-	const { open, onClose } = props;
+export function DialogSuccess(attributes: DialogAttributes): ReactElement {
+	const { open } = attributes;
 	const [isOpen, setIsOpen] = useState(open);
 
 	useEffect(() => {
@@ -12,7 +12,6 @@ export function DialogSuccess(props: CustomDialogElement): ReactElement {
 	}, [open]);
 
 	const closeDialog = () => {
-		if (typeof onClose === 'function') onClose();
 		setIsOpen(false);
 	};
 

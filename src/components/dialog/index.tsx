@@ -1,31 +1,19 @@
-import { PropsWithChildren, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Position } from '../../constants';
+import { DialogAttributes } from './types.d';
 import './index.css';
 
-export type JSXDialogElement = PropsWithChildren<
-	Omit<Omit<Partial<HTMLDialogElement>, 'children'>, 'style'>
->;
-
-export interface CustomDialogElement extends JSXDialogElement {
-	body?: ReactElement;
-	footer?: ReactElement;
-	header?: ReactElement;
-	open?: boolean;
-	position?: Position;
-	onClose?: () => void;
-}
-
-export function Dialog(props: CustomDialogElement): ReactElement {
-	const { body, children, footer, header, open, position = Position.BOTTOM } = props;
+export function Dialog(attributes: DialogAttributes): ReactElement {
+	const { body, children, footer, header, position = Position.BOTTOM } = attributes;
 	return (
-		<div className={`dialog dialog--${position} ${open ? 'dialog--open' : ''}`}>
-			<section className='dialog__window' role='dialog'>
+		<dialog {...attributes} className={`dialog dialog--${position}`}>
+			<section className='dialog__window'>
 				{header && <header className='dialog__header'>{header}</header>}
 				{body && <div className='dialog__body'>{body}</div>}
 				{footer && <footer className='dialog__footer'>{footer}</footer>}
 				{!(header || body || footer) && children}
 			</section>
-		</div>
+		</dialog>
 	);
 }
 
