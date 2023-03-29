@@ -1,2 +1,2 @@
-export { Shipment } from './shipment/shipment';
-export { Shipments } from './shipments/shipments';
+export { Shipment } from './shipment';
+export { Shipments } from './shipments';

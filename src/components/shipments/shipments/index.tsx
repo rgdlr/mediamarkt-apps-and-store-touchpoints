@@ -2,7 +2,7 @@ import { BaseSyntheticEvent, PropsWithChildren, ReactElement, useState } from 'r
 import { Button, Dialog, Form, Input, Label, Shipment, Svg } from '../../../components';
 import { Icon, Shape } from '../../../constants';
 import { Carrier as CarrierI, Parcel as ParcelI, Shipment as ShipmentI } from '../../../interfaces';
-import './shipments.css';
+import './index.css';
 
 export interface JSXShipmentsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
 	carriers?: CarrierI[];

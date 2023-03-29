@@ -1,7 +1,7 @@
 import { PropsWithChildren, ReactElement } from 'react';
 import { Carrier as CarrierI, Parcel as ParcelI } from '../../../interfaces';
-import { Svg } from '../../svg/svg';
-import './parcel.css';
+import { Svg } from '../../../components';
+import './index.css';
 
 export interface JSXParcelElement extends PropsWithChildren<Partial<HTMLButtonElement>> {
 	carrier?: CarrierI;

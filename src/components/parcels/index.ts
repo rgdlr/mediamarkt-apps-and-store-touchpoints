@@ -1,2 +1,2 @@
-export { Parcel } from './parcel/parcel';
-export { Parcels } from './parcels/parcels';
+export { Parcel } from './parcel';
+export { Parcels } from './parcels';

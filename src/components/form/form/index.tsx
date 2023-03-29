@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactElement } from 'react';
-import './form.css';
+import './index.css';
 
 export type JSXFormElement = PropsWithChildren<
 	Omit<Omit<Partial<HTMLFormElement>, 'children'>, 'style'>

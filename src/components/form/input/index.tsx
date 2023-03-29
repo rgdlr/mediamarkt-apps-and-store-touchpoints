@@ -1,5 +1,5 @@
 import { CSSProperties, PropsWithChildren, ReactElement } from 'react';
-import './input.css';
+import './index.css';
 
 export type JSXInputElement = PropsWithChildren<
 	Omit<Omit<Partial<HTMLInputElement>, 'children'>, 'style'>

@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { Button, Dialog, Svg } from '../../../components';
 import { Position } from '../../../constants';
-import { CustomDialogElement } from '../dialog';
+import { CustomDialogElement } from '../../dialog';
 
 export function DialogSuccess(props: CustomDialogElement): ReactElement {
 	const { open, onClose } = props;

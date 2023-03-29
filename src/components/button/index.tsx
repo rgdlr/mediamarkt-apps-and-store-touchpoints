@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Shape } from '../../constants';
-import './button.css';
 import { ButtonAttributes } from './types.d';
+import './index.css';
 
 export function Button(attributes: ButtonAttributes): ReactElement {
 	const { children, className, shape = Shape.RECTANGLE } = attributes;

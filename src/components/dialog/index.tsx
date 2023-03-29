@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactElement } from 'react';
 import { Position } from '../../constants';
-import './dialog.css';
+import './index.css';
 
 export type JSXDialogElement = PropsWithChildren<
 	Omit<Omit<Partial<HTMLDialogElement>, 'children'>, 'style'>
@@ -29,5 +29,5 @@ export function Dialog(props: CustomDialogElement): ReactElement {
 	);
 }
 
-export { DialogError } from './error/error';
-export { DialogSuccess } from './success/success';
+export { DialogError } from './error';
+export { DialogSuccess } from './success';

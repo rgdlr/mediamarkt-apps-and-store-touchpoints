@@ -1,6 +1,6 @@
 import { CSSProperties, PropsWithChildren, ReactElement } from 'react';
 import { Position } from '../../../constants';
-import './label.css';
+import './index.css';
 
 export type JSXLabelElement = PropsWithChildren<
 	Omit<Omit<Partial<HTMLLabelElement>, 'children'>, 'style'>

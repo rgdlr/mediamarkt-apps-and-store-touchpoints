@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactElement } from 'react';
 import { Shipment as ShipmentI } from '../../../interfaces';
-import './shipment.css';
+import './index.css';
 
 export interface JSXShipmentElement extends PropsWithChildren<Partial<HTMLButtonElement>> {
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;

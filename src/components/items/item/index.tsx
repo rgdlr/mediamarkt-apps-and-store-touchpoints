@@ -1,7 +1,7 @@
 import { PropsWithChildren, ReactElement } from 'react';
 import { Svg } from '../../../components';
 import { Item as ItemI } from '../../../interfaces';
-import './item.css';
+import './index.css';
 
 export interface JSXItemElement extends PropsWithChildren<Partial<HTMLDivElement>> {
 	item?: ItemI;

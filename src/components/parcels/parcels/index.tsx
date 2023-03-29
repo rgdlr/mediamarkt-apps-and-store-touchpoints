@@ -6,7 +6,7 @@ import {
 	Parcel as ParcelI,
 	Shipment as ShipmentI
 } from '../../../interfaces';
-import './parcels.css';
+import './index.css';
 
 export interface JSXParcelsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
 	carriers?: CarrierI[];

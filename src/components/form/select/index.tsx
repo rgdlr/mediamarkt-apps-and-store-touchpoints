@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactElement } from 'react';
-import { Label } from '../../../components';
-import './select.css';
+import { Label } from '../..';
+import './index.css';
 
 export type JSXSelectElement = PropsWithChildren<
 	Omit<Omit<Partial<HTMLSelectElement>, 'children'>, 'style'>

@@ -1,7 +1,7 @@
 import { PropsWithChildren, ReactElement, useState } from 'react';
 import { Button, Dialog, DialogSuccess, Form, Input, Item, Label } from '../../../components';
 import { Carrier as CarrierI, Item as ItemI, Parcel as ParcelI } from '../../../interfaces';
-import './items.css';
+import './index.css';
 
 export interface JSXItemsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
 	carrier?: CarrierI;
