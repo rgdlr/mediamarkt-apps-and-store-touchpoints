@@ -1,5 +1,14 @@
 import { PropsWithChildren, ReactElement, useState } from 'react';
-import { Button, Dialog, DialogSuccess, Form, Input, Item, Label } from '../../../components';
+import {
+	Button,
+	Dialog,
+	DialogSuccess,
+	Form,
+	Input,
+	Item,
+	Label,
+	Signature
+} from '../../../components';
 import { Carrier as CarrierI, Item as ItemI, Parcel as ParcelI } from '../../../interfaces';
 import './index.css';
 
@@ -40,8 +49,8 @@ export function Items(attributes: JSXItemsElement): ReactElement {
 		header: <h3 className='dialog__title'>Delivery information</h3>,
 		body: (
 			<Form>
-				<Label className='label--signature'>Driver's signature</Label>
-				<Input className='input--signature'></Input>
+				<Label>Driver's signature</Label>
+				<Signature></Signature>
 			</Form>
 		),
 		footer: (

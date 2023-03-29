@@ -1,21 +1,12 @@
-import { PropsWithChildren, ReactElement } from 'react';
-import { Label } from '../../../components';
+import { ReactElement } from 'react';
+import { SelectAttributes } from './types.d';
 import './index.css';
 
-export type JSXSelectElement = PropsWithChildren<
-	Omit<Omit<Partial<HTMLSelectElement>, 'children'>, 'style'>
->;
-
-export interface CustomSelectElement extends JSXSelectElement {
-	label?: string;
-}
-
-export function Select(attributes: CustomSelectElement): ReactElement {
-	const { children, label } = attributes;
+export function Select(attributes: SelectAttributes): ReactElement {
+	const { children } = attributes;
 	return (
-		<>
-			<Label>{label}</Label>
-			<select className='select'>{children}</select>
-		</>
+		<select {...attributes} className='select'>
+			{children}
+		</select>
 	);
 }

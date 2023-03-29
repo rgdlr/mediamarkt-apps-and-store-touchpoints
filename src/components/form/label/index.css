@@ -11,10 +11,6 @@
 	z-index: 1;
 }
 
-.label--signature {
+.label:has(~ .signature) {
 	background: linear-gradient(var(--white-100), var(--white-100), var(--blue-100));
-}
-
-.input ~ :not(.label--bottom) {
-	margin-bottom: 1rem;
 }
