@@ -7,8 +7,8 @@ export interface JSXItemElement extends PropsWithChildren<Partial<HTMLDivElement
 	item?: ItemI;
 }
 
-export function Item(props: JSXItemElement): ReactElement {
-	const { item } = props;
+export function Item(attributes: JSXItemElement): ReactElement {
+	const { item } = attributes;
 
 	return (
 		<div className='item'>

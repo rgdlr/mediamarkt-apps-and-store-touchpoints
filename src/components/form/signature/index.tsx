@@ -3,6 +3,6 @@ import './index.css';
 
 export interface JSXSignatureElement extends HTMLCanvasElement {}
 
-export function Signature(props: JSXSignatureElement): ReactElement {
+export function Signature(attributes: JSXSignatureElement): ReactElement {
 	return <></>;
 }

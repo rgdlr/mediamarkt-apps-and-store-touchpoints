@@ -3,6 +3,6 @@ import './index.css';
 
 export interface JSXTrackingElement extends HTMLDivElement {}
 
-export function Tracking(props: JSXTrackingElement): ReactElement {
+export function Tracking(attributes: JSXTrackingElement): ReactElement {
 	return <></>;
 }

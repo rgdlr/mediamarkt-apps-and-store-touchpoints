@@ -7,8 +7,8 @@ export interface JSXShipmentElement extends PropsWithChildren<Partial<HTMLButton
 	shipment?: ShipmentI;
 }
 
-export function Shipment(props: JSXShipmentElement): ReactElement {
-	const { onClick, shipment } = props;
+export function Shipment(attributes: JSXShipmentElement): ReactElement {
+	const { onClick, shipment } = attributes;
 
 	return (
 		<button className='shipment' data-id={shipment?.deliveryDate} onClick={onClick}>

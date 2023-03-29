@@ -11,8 +11,8 @@ export interface CustomLabelElement extends JSXLabelElement {
 	style?: CSSProperties;
 }
 
-export function Label(props: CustomLabelElement): ReactElement {
-	const { children, className, position = Position.BOTTOM, style } = props;
+export function Label(attributes: CustomLabelElement): ReactElement {
+	const { children, className, position = Position.BOTTOM, style } = attributes;
 	return (
 		<label className={`label label--${position} ${className}`} style={style}>
 			{children}

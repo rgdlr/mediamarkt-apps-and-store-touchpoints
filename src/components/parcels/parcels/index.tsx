@@ -16,8 +16,8 @@ export interface JSXParcelsElement extends PropsWithChildren<Partial<HTMLDivElem
 	onSelect?(id: string): void;
 }
 
-export function Parcels(props: JSXParcelsElement): ReactElement {
-	const { children, onSelect, shipment } = props;
+export function Parcels(attributes: JSXParcelsElement): ReactElement {
+	const { children, onSelect, shipment } = attributes;
 
 	const setSelected = (event: BaseSyntheticEvent) => {
 		const id = event.currentTarget.getAttribute('data-id');

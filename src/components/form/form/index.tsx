@@ -7,7 +7,7 @@ export type JSXFormElement = PropsWithChildren<
 
 export interface CustomFormElement extends JSXFormElement {}
 
-export function Form(props: CustomFormElement): ReactElement {
-	const { children } = props;
+export function Form(attributes: CustomFormElement): ReactElement {
+	const { children } = attributes;
 	return <form className='form'>{children}</form>;
 }

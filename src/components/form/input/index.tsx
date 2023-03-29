@@ -9,8 +9,8 @@ export interface CustomInputElement extends JSXInputElement {
 	style?: CSSProperties;
 }
 
-export function Input(props: CustomInputElement): ReactElement {
-	const { className, list, readOnly, style, value } = props;
+export function Input(attributes: CustomInputElement): ReactElement {
+	const { className, list, readOnly, style, value } = attributes;
 	return (
 		<input
 			className={`input ${className}`}

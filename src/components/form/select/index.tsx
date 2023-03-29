@@ -10,8 +10,8 @@ export interface CustomSelectElement extends JSXSelectElement {
 	label?: string;
 }
 
-export function Select(props: CustomSelectElement): ReactElement {
-	const { children, label } = props;
+export function Select(attributes: CustomSelectElement): ReactElement {
+	const { children, label } = attributes;
 	return (
 		<>
 			<Label>{label}</Label>

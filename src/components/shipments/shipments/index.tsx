@@ -11,8 +11,8 @@ export interface JSXShipmentsElement extends PropsWithChildren<Partial<HTMLDivEl
 	onSelect?(id: string): void;
 }
 
-export function Shipments(props: JSXShipmentsElement): ReactElement {
-	const { carriers, children, onSelect, parcels, shipments } = props;
+export function Shipments(attributes: JSXShipmentsElement): ReactElement {
+	const { carriers, children, onSelect, parcels, shipments } = attributes;
 	const [open, setOpen] = useState(false);
 
 	const setSelected = (event: BaseSyntheticEvent) => {

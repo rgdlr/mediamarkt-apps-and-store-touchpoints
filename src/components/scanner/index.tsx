@@ -3,6 +3,6 @@ import './index.css';
 
 export interface JSXScannerElement extends HTMLInputElement {}
 
-export function Scanner(props: JSXScannerElement): ReactElement {
+export function Scanner(attributes: JSXScannerElement): ReactElement {
 	return <></>;
 }

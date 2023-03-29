@@ -9,8 +9,8 @@ export interface JSXParcelElement extends PropsWithChildren<Partial<HTMLButtonEl
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export function Parcel(props: JSXParcelElement): ReactElement {
-	const { carrier, parcel, onClick } = props;
+export function Parcel(attributes: JSXParcelElement): ReactElement {
+	const { carrier, parcel, onClick } = attributes;
 
 	return (
 		<button className='parcel' data-id={parcel?.id.$oid} onClick={onClick}>

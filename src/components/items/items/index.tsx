@@ -9,8 +9,8 @@ export interface JSXItemsElement extends PropsWithChildren<Partial<HTMLDivElemen
 	parcel?: ParcelI;
 }
 
-export function Items(props: JSXItemsElement): ReactElement {
-	const { carrier, children, items, parcel } = props;
+export function Items(attributes: JSXItemsElement): ReactElement {
+	const { carrier, children, items, parcel } = attributes;
 	const [isDeliveryInformationDialogOpen, setIsDeliveryInformationDialogOpen] = useState(false);
 	const [isDriversSignatureDialogOpen, setIsDriversSignatureDialogOpen] = useState(false);
 	const [isSuccessDialogOpen, setIsSuccessDialogOpen] = useState(false);
