@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactElement, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import {
 	Button,
 	Dialog,
@@ -9,16 +9,10 @@ import {
 	Label,
 	Signature
 } from '../../../components';
-import { Carrier as CarrierI, Item as ItemI, Parcel as ParcelI } from '../../../interfaces';
 import './index.css';
+import { ItemsAttributes } from './types';
 
-export interface JSXItemsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
-	carrier?: CarrierI;
-	items?: ItemI[];
-	parcel?: ParcelI;
-}
-
-export function Items(attributes: JSXItemsElement): ReactElement {
+export function Items(attributes: ItemsAttributes): ReactElement {
 	const { carrier, children, items, parcel } = attributes;
 	const [isDeliveryInformationDialogOpen, setIsDeliveryInformationDialogOpen] = useState(false);
 	const [isDriversSignatureDialogOpen, setIsDriversSignatureDialogOpen] = useState(false);

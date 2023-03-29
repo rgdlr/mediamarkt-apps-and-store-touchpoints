@@ -1,3 +1,3 @@
 import { CanvasAttributes } from '../../canvas';
 
-export interface SignatureAttributes extends CanvasAttributes {}
+export interface SignatureAttributes extends Partial<CanvasAttributes> {}

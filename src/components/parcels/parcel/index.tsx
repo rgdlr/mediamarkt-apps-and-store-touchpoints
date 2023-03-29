@@ -1,15 +1,9 @@
-import { PropsWithChildren, ReactElement } from 'react';
-import { Carrier as CarrierI, Parcel as ParcelI } from '../../../interfaces';
+import { ReactElement } from 'react';
 import { Svg } from '../../../components';
+import { ParcelAttributes } from './types';
 import './index.css';
 
-export interface JSXParcelElement extends PropsWithChildren<Partial<HTMLButtonElement>> {
-	carrier?: CarrierI;
-	parcel?: ParcelI;
-	onClick?: React.MouseEventHandler<HTMLButtonElement>;
-}
-
-export function Parcel(attributes: JSXParcelElement): ReactElement {
+export function Parcel(attributes: ParcelAttributes): ReactElement {
 	const { carrier, parcel, onClick } = attributes;
 
 	return (

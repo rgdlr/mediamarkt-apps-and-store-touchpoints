@@ -1,13 +1,9 @@
-import { PropsWithChildren, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Svg } from '../../../components';
-import { Item as ItemI } from '../../../interfaces';
+import { ItemAttributes } from './types';
 import './index.css';
 
-export interface JSXItemElement extends PropsWithChildren<Partial<HTMLDivElement>> {
-	item?: ItemI;
-}
-
-export function Item(attributes: JSXItemElement): ReactElement {
+export function Item(attributes: ItemAttributes): ReactElement {
 	const { item } = attributes;
 
 	return (

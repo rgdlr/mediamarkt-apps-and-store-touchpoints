@@ -1,13 +1,8 @@
-import { PropsWithChildren, ReactElement } from 'react';
-import { Shipment as ShipmentI } from '../../../interfaces';
+import { ReactElement } from 'react';
+import { ShipmentAttributes } from './types';
 import './index.css';
 
-export interface JSXShipmentElement extends PropsWithChildren<Partial<HTMLButtonElement>> {
-	onClick?: React.MouseEventHandler<HTMLButtonElement>;
-	shipment?: ShipmentI;
-}
-
-export function Shipment(attributes: JSXShipmentElement): ReactElement {
+export function Shipment(attributes: ShipmentAttributes): ReactElement {
 	const { onClick, shipment } = attributes;
 
 	return (

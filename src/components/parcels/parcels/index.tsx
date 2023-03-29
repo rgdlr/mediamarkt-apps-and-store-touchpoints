@@ -1,22 +1,9 @@
-import { BaseSyntheticEvent, PropsWithChildren, ReactElement } from 'react';
+import { BaseSyntheticEvent, ReactElement } from 'react';
 import { Parcel } from '../../../components';
-import {
-	Carrier as CarrierI,
-	Item as ItemI,
-	Parcel as ParcelI,
-	Shipment as ShipmentI
-} from '../../../interfaces';
+import { ParcelsAttributes } from './types';
 import './index.css';
 
-export interface JSXParcelsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
-	carriers?: CarrierI[];
-	items?: ItemI[];
-	parcels?: ParcelI[];
-	shipment?: ShipmentI;
-	onSelect?(id: string): void;
-}
-
-export function Parcels(attributes: JSXParcelsElement): ReactElement {
+export function Parcels(attributes: ParcelsAttributes): ReactElement {
 	const { children, onSelect, shipment } = attributes;
 
 	const setSelected = (event: BaseSyntheticEvent) => {

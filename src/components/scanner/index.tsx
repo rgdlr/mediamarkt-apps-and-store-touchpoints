@@ -1,8 +1,7 @@
 import { ReactElement } from 'react';
+import { ScannerAttributes } from './types';
 import './index.css';
 
-export interface JSXScannerElement extends HTMLInputElement {}
-
-export function Scanner(attributes: JSXScannerElement): ReactElement {
+export function Scanner(attributes: ScannerAttributes): ReactElement {
 	return <></>;
 }

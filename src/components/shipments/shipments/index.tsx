@@ -1,17 +1,10 @@
-import { BaseSyntheticEvent, PropsWithChildren, ReactElement, useState } from 'react';
+import { BaseSyntheticEvent, ReactElement, useState } from 'react';
 import { Button, Dialog, Form, Input, Label, Shipment, Svg } from '../../../components';
 import { Icon, Shape } from '../../../constants';
-import { Carrier as CarrierI, Parcel as ParcelI, Shipment as ShipmentI } from '../../../interfaces';
+import { ShipmentsAttributes } from './types';
 import './index.css';
 
-export interface JSXShipmentsElement extends PropsWithChildren<Partial<HTMLDivElement>> {
-	carriers?: CarrierI[];
-	parcels?: ParcelI[];
-	shipments?: ShipmentI[];
-	onSelect?(id: string): void;
-}
-
-export function Shipments(attributes: JSXShipmentsElement): ReactElement {
+export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 	const { carriers, children, onSelect, parcels, shipments } = attributes;
 	const [open, setOpen] = useState(false);
 
@@ -24,9 +17,9 @@ export function Shipments(attributes: JSXShipmentsElement): ReactElement {
 	const body = (
 		<Form>
 			<Label>ID</Label>
-			<Input list={'parcel-id' as unknown as HTMLElement}></Input>
+			<Input list={'parcel-id'}></Input>
 			<Label>Carrier ID</Label>
-			<Input list={'carrier-id' as unknown as HTMLElement}></Input>
+			<Input list={'carrier-id'}></Input>
 			<datalist id='carrier-id'>
 				{carriers?.map((carrier) => (
 					<option key={carrier.id.$oid} value={carrier.id.$oid.toUpperCase()}></option>
