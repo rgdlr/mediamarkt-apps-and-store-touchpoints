@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
-import { Svg } from '../..';
+import { Svg } from '../../../components';
 import './index.css';
-import { ItemAttributes } from './types';
+import { ItemAttributes } from './types.d';
 
 export function Item(attributes: ItemAttributes): ReactElement {
 	const { item } = attributes;

@@ -1,13 +1,13 @@
 import { ReactElement } from 'react';
-import { Svg } from '../..';
-import { ParcelAttributes } from './types';
+import { Svg } from '../../../components';
 import './index.css';
+import { ParcelAttributes } from './types.d';
 
 export function Parcel(attributes: ParcelAttributes): ReactElement {
 	const { carrier, parcel, onClick } = attributes;
 
 	return (
-		<button className='parcel' data-id={parcel?.id.$oid} onClick={onClick}>
+		<button {...attributes} className='parcel' data-id={parcel?.id.$oid}>
 			<div className='parcel__icon'>
 				<Svg icon='truck'></Svg>
 			</div>

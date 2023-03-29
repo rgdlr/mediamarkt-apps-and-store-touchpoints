@@ -1,8 +1,8 @@
 import { BaseSyntheticEvent, ReactElement, useState } from 'react';
-import { Button, Dialog, Form, Input, Label, Shipment, Svg } from '../..';
+import { Button, Dialog, Form, Input, Label, Shipment, Svg } from '../../../components';
 import { Icon, Shape } from '../../../constants';
-import { ShipmentsAttributes } from './types';
 import './index.css';
+import { ShipmentsAttributes } from './types.d';
 
 export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 	const { carriers, children, onSelect, parcels, shipments } = attributes;

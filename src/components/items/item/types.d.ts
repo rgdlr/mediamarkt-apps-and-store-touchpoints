@@ -1,6 +1,6 @@
-import { Parcel } from '../../../interfaces';
-import { ButtonAttributes } from '../../types';
+import { Item } from '../../../interfaces';
+import { CustomButtonAttributes } from '../../types.d';
 
-export interface ItemAttributes extends ButtonAttributes {
+export interface ItemAttributes extends CustomButtonAttributes {
 	item?: Item;
 }

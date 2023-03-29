@@ -1,3 +1,4 @@
+import { HTMLAttributes } from 'react';
 import { Carrier, Item, Parcel, Shipment } from '../../../interfaces';
 
 export interface ParcelsAttributes extends HTMLAttributes<HTMLDivElement> {

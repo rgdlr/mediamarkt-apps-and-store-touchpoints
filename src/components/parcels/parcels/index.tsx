@@ -1,10 +1,10 @@
 import { BaseSyntheticEvent, ReactElement } from 'react';
-import { Parcel } from '../..';
-import { ParcelsAttributes } from './types';
+import { Parcel } from '../../../components';
 import './index.css';
+import { ParcelsAttributes } from './types.d';
 
 export function Parcels(attributes: ParcelsAttributes): ReactElement {
-	const { children, onSelect, shipment } = attributes;
+	const { children, hidden, onSelect, shipment } = attributes;
 
 	const setSelected = (event: BaseSyntheticEvent) => {
 		const id = event.currentTarget.getAttribute('data-id');
@@ -12,7 +12,7 @@ export function Parcels(attributes: ParcelsAttributes): ReactElement {
 	};
 
 	return (
-		<section className='parcels'>
+		<section className={`parcels ${hidden ? 'parcels--out' : ''}`}>
 			<header className='parcels__header'>
 				<h2>Parcel List {shipment?.deliveryDate}</h2>
 			</header>

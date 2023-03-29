@@ -1,6 +1,6 @@
 import { Shipment } from '../../../interfaces';
-import { ButtonAttributes } from '../../types.d';
+import { CustomButtonAttributes } from '../../types.d';
 
-export interface ShipmentAttributes extends ButtonAttributes {
+export interface ShipmentAttributes extends CustomButtonAttributes {
 	shipment?: Shipment;
 }

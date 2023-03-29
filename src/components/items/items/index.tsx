@@ -8,9 +8,9 @@ import {
 	Item,
 	Label,
 	Signature
-} from '../..';
+} from '../../../components';
 import './index.css';
-import { ItemsAttributes } from './types';
+import { ItemsAttributes } from './types.d';
 
 export function Items(attributes: ItemsAttributes): ReactElement {
 	const { carrier, children, items, parcel } = attributes;

@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { CustomScannerAttributes } from '../../components/types';
+import { CustomScannerAttributes } from '../../components/types.d';
 import './index.css';
 
 export function Scanner(attributes: CustomScannerAttributes): ReactElement {

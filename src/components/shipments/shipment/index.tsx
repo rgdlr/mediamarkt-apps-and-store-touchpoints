@@ -1,12 +1,12 @@
 import { ReactElement } from 'react';
-import { ShipmentAttributes } from './types';
+import { ShipmentAttributes } from './types.d';
 import './index.css';
 
 export function Shipment(attributes: ShipmentAttributes): ReactElement {
-	const { onClick, shipment } = attributes;
+	const { shipment } = attributes;
 
 	return (
-		<button className='shipment' data-id={shipment?.deliveryDate} onClick={onClick}>
+		<button {...attributes} className='shipment' data-id={shipment?.deliveryDate}>
 			<div className='shipment__information'>
 				<div className='shipment__title'>Parcel List {shipment?.deliveryDate}</div>
 				<div className='shipment__carriers'>
