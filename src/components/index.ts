@@ -1,4 +1,5 @@
 export { Button } from './button';
+export { Canvas } from './canvas';
 export { Dialog, DialogError, DialogSuccess } from './dialog';
 export { Form, Input, Label, Select, Signature } from './form';
 export { Item, Items } from './items';

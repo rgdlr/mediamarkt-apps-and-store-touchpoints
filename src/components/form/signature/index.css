@@ -1,1 +1,13 @@
-.signature {}
+.signature {
+	background-color: var(--blue-100);
+	border-radius: 0.5rem;
+	border: 0.1rem solid var(--gray-200);
+	cursor: crosshair;
+	height: 12rem;
+	position: relative;
+	width: 100%;
+}
+
+.signature ~ :not(.label--bottom) {
+	margin-bottom: 1rem;
+}
