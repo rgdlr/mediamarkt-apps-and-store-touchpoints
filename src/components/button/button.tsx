@@ -1,10 +1,7 @@
-import { ButtonHTMLAttributes, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Shape } from '../../constants';
 import './button.css';
-
-export interface ButtonAttributes extends ButtonHTMLAttributes<HTMLButtonElement> {
-	shape?: Shape;
-}
+import { ButtonAttributes } from './types.d';
 
 export function Button(attributes: ButtonAttributes): ReactElement {
 	const { children, className, shape = Shape.RECTANGLE } = attributes;
