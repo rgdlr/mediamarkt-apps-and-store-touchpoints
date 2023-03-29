@@ -12,5 +12,11 @@
 }
 
 .label:has(~ .signature) {
-	background: linear-gradient(var(--white-100), var(--white-100), var(--blue-100));
+	background: linear-gradient(
+		var(--white-100),
+		var(--white-100),
+		var(--white-100),
+		var(--blue-100),
+		var(--blue-100)
+	);
 }
