@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import 'index.css';
+import './index.css';
 
 export interface JSXSignatureElement extends HTMLCanvasElement {}
 

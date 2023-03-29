@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Icons } from './icon';
-import { CustomSvgAttributes } from './types';
+import { CustomSvgAttributes } from './types.d';
 
 export function Svg(attributes: CustomSvgAttributes): ReactElement {
 	const { children, icon } = attributes;

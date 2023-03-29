@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactElement } from 'react';
-import { Label } from '../..';
+import { Label } from '../../../components';
 import './index.css';
 
 export type JSXSelectElement = PropsWithChildren<
