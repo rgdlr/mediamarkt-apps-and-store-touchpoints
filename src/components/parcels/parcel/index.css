@@ -40,6 +40,7 @@ li:not(:last-child) .parcel {
 	display: grid;
 	font-size: 0.8rem;
 	place-content: center;
+	text-transform: uppercase;
 }
 
 .parcel__status--delivery {

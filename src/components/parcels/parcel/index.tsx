@@ -12,11 +12,13 @@ export function Parcel(attributes: ParcelAttributes): ReactElement {
 				<Svg icon='truck'></Svg>
 			</div>
 			<div className='parcel__information'>
-				<div className='parcel__title'>Parcel List {parcel?.pickupDate}</div>
+				<div className='parcel__title'>Parcel List {parcel?.deliveryDate}</div>
 				<div className='parcel__company'>{carrier?.companyName}</div>
 				<div className='parcel__items'>{parcel?.itemsCount} items to be picked up</div>
 			</div>
-			<div className='parcel__status parcel__status--delivery'>DELIVERY</div>
+			<div className={`parcel__status parcel__status--${(parcel as any)?.status ?? 'delivery'}`}>
+				{(parcel as any)?.status ?? 'delivery'}
+			</div>
 		</button>
 	);
 }
