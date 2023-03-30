@@ -7,6 +7,9 @@ import { ItemAttributes } from './types.d';
 export function Item(attributes: ItemAttributes): ReactElement {
 	const { item } = attributes;
 
+	const getWeight = () =>
+		item ? (item?.weight / 1000 > 1 ? `${item?.weight / 1000}kg` : `${item?.weight}g`) : '';
+
 	return (
 		<div className='item'>
 			<div className='item__icon'>
@@ -16,7 +19,7 @@ export function Item(attributes: ItemAttributes): ReactElement {
 			</div>
 			<div className='item__information'>
 				<div className='item__title'>{item?.id.$oid.toUpperCase()}</div>
-				<div className='item__weight'>{item?.weight}kg</div>
+				<div className='item__weight'>{getWeight()}</div>
 			</div>
 		</div>
 	);

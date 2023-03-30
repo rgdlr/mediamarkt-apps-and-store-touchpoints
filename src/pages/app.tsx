@@ -69,9 +69,9 @@ export function App(): JSX.Element {
 			)}
 			{step === Step.ITEMS && (
 				<Items
-					carrier={carriers?.shift()}
+					carrier={carriers?.at(0)}
 					items={getItemsByShipmentDateAndParcelId()}
-					parcel={parcels?.shift()}></Items>
+					parcel={parcels?.at(0)}></Items>
 			)}
 			{step !== Step.SHIPMENTS && (
 				<Button
