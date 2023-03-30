@@ -1,6 +1,7 @@
+import { ReactElement } from 'react';
 import { CustomSvgAttributes } from './types';
 
-export type Icon = keyof typeof Icons;
+export type Icon = string;
 export type ItemTypeIcon = keyof typeof ItemTypeIcons;
 
 export const ItemTypeIcons = {
@@ -14,7 +15,7 @@ export function getIconNameByItemType(itemType: ItemTypeIcon): Icon {
 	return ItemTypeIcons[itemType] as Icon;
 }
 
-export const Icons = (attributes: CustomSvgAttributes) => ({
+export const Icons = (attributes: CustomSvgAttributes): Record<string, ReactElement> => ({
 	back: (
 		<svg {...attributes} fill='currentColor' width='16' height='16' viewBox='0 0 16 16'>
 			<path d='M16 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H16V7Z' />
