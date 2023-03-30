@@ -2,13 +2,16 @@ import { Parcel, Shipment } from '../interfaces';
 
 export function getShipmentsFromParcels(parcels: Parcel[]) {
 	return parcels.reduce((shipments: Shipment[], parcel: Parcel) => {
-		const { deliveryDate } = parcel;
+		const { deliveryDate, itemsCount, pickupDate } = parcel;
 
 		const shipmentDeliveryDate = shipments.find(
 			(shipment) => shipment.deliveryDate === deliveryDate
 		);
 		if (!shipmentDeliveryDate) {
-			return [...shipments, { deliveryDate, parcels: [parcel] }];
+			return [
+				...shipments,
+				{ carriersCount: 1, deliveryDate, itemsCount, parcels: [parcel], pickupDate }
+			];
 		}
 
 		const shipmentDeliveryDateRest = shipments.filter(
@@ -16,7 +19,13 @@ export function getShipmentsFromParcels(parcels: Parcel[]) {
 		);
 		return [
 			...shipmentDeliveryDateRest,
-			{ deliveryDate, parcels: [...shipmentDeliveryDate.parcels, parcel] }
+			{
+				carriersCount: shipmentDeliveryDate.carriersCount + 1,
+				deliveryDate,
+				itemsCount: itemsCount + shipmentDeliveryDate.itemsCount,
+				parcels: [...shipmentDeliveryDate.parcels, parcel],
+				pickupDate
+			}
 		];
 	}, []);
 }

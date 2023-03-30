@@ -10,9 +10,9 @@ export function Shipment(attributes: ShipmentAttributes): ReactElement {
 			<div className='shipment__information'>
 				<div className='shipment__title'>Parcel List {shipment?.deliveryDate}</div>
 				<div className='shipment__carriers'>
-					{4} carriers will pickup the parcel on {'01/11/2022'}
+					{shipment?.carriersCount} carriers will pickup the parcel on {shipment?.pickupDate}
 				</div>
-				<div className='shipment__items'>{shipment?.parcels.length} items</div>
+				<div className='shipment__items'>{shipment?.itemsCount} items</div>
 			</div>
 			<div className='shipment__date'>{shipment?.deliveryDate}</div>
 		</button>
