@@ -1,6 +1,6 @@
-import { getShipmentsFromParcels } from '@/services';
 import { useReducer } from 'react';
 import { Carrier, Item, Parcel, Shipment } from '../interfaces';
+import { getShipmentsFromParcels } from '../services';
 import { useFetch } from './useFetch';
 
 interface ReducerState {
