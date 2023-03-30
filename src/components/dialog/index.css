@@ -12,19 +12,6 @@
 	transition-timing-function: ease;
 }
 
-.dialog[open] {
-	opacity: 1;
-	visibility: visible;
-}
-
-.dialog--bottom {
-	align-items: flex-end;
-}
-
-.dialog--center {
-	align-items: center;
-}
-
 .dialog__window {
 	background-color: var(--white-100);
 	margin-inline: auto;
@@ -34,20 +21,6 @@
 	transition: transform, visibility;
 	transition-duration: 250ms;
 	transition-timing-function: ease;
-}
-
-.dialog[open] .dialog__window {
-	transform: translateY(0);
-}
-
-.dialog--bottom .dialog__window {
-	border-radius: 1.5rem 1.5rem 0 0;
-	width: min(50rem, 100%);
-}
-
-.dialog--center .dialog__window {
-	border-radius: 1.5rem;
-	max-width: min(50rem, 90%);
 }
 
 .dialog__header {
@@ -76,4 +49,48 @@
 }
 
 .dialog__footer {
+}
+
+.dialog[open] {
+	opacity: 1;
+	visibility: visible;
+}
+
+.dialog[open] .dialog__window {
+	transform: translateY(0);
+}
+
+.dialog--bottom {
+	align-items: flex-end;
+}
+
+.dialog--bottom .dialog__window {
+	border-radius: 1.5rem 1.5rem 0 0;
+	width: min(50rem, 100%);
+}
+
+.dialog--center {
+	align-items: center;
+}
+
+.dialog--center .dialog__window {
+	border-radius: 1.5rem;
+	max-width: min(50rem, 90%);
+}
+
+.dialog--lines .dialog__window::after {
+	background-color: var(--gray-100);
+	border-radius: 5rem;
+	content: '';
+	height: 0.2rem;
+	left: 50%;
+	position: absolute;
+	top: 0.75rem;
+	transform: translateX(-50%);
+	width: 5rem;
+}
+
+.dialog--lines .dialog__header {
+	border-bottom: 0.1rem solid var(--gray-100);
+	margin-bottom: 1rem;
 }
