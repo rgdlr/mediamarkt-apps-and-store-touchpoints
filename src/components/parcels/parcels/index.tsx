@@ -4,7 +4,7 @@ import './index.css';
 import { ParcelsAttributes } from './types.d';
 
 export function Parcels(attributes: ParcelsAttributes): ReactElement {
-	const { children, hidden, onSelect, shipment } = attributes;
+	const { carriers, children, hidden, onSelect, shipment } = attributes;
 
 	const setSelected = (event: BaseSyntheticEvent) => {
 		const id = event.currentTarget.getAttribute('data-id');
@@ -19,11 +19,14 @@ export function Parcels(attributes: ParcelsAttributes): ReactElement {
 			<main className='parcels__main'>
 				<ul>
 					{shipment
-						? shipment.parcels.map((parcel) => (
+						? shipment.parcels.map((parcel, index) => (
 								<li key={parcel.id.$oid}>
-									<Parcel parcel={parcel} onClick={setSelected}></Parcel>
+									<Parcel
+										carrier={carriers?.at(index)}
+										parcel={parcel}
+										onClick={setSelected}></Parcel>
 								</li>
-							))
+						  ))
 						: children}
 				</ul>
 			</main>
