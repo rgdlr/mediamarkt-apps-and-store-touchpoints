@@ -1,13 +1,27 @@
-export type Icon = keyof typeof Icons;
+import { CustomSvgAttributes } from './types';
 
-export const Icons = {
+export type Icon = keyof typeof Icons;
+export type ItemTypeIcon = keyof typeof ItemTypeIcons;
+
+export const ItemTypeIcons = {
+	PC: 'laptop',
+	Phone: 'smartphone',
+	Smartwatch: 'smartwatch',
+	Television: 'television'
+};
+
+export function getIconNameByItemType(itemType: ItemTypeIcon): Icon {
+	return ItemTypeIcons[itemType] as Icon;
+}
+
+export const Icons = (attributes: CustomSvgAttributes) => ({
 	back: (
-		<svg fill='currentColor' width='16' height='16' viewBox='0 0 16 16'>
+		<svg {...attributes} fill='currentColor' width='16' height='16' viewBox='0 0 16 16'>
 			<path d='M16 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H16V7Z' />
 		</svg>
 	),
 	error: (
-		<svg fill='currentColor' width='144' height='144' viewBox='0 0 144 144'>
+		<svg {...attributes} fill='currentColor' width='144' height='144' viewBox='0 0 144 144'>
 			<rect width='144' height='144' fill='url(#pattern0)' />
 			<defs>
 				<pattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'>
@@ -23,7 +37,7 @@ export const Icons = {
 		</svg>
 	),
 	laptop: (
-		<svg fill='currentColor' width='24' height='24' viewBox='0 0 24 24'>
+		<svg {...attributes} fill='currentColor' width='24' height='24' viewBox='0 0 24 24'>
 			<rect width='24' height='24' fill='url(#pattern0)' />
 			<defs>
 				<pattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'>
@@ -39,12 +53,12 @@ export const Icons = {
 		</svg>
 	),
 	plus: (
-		<svg fill='currentColor' width='14' height='14' viewBox='0 0 14 14'>
+		<svg {...attributes} fill='currentColor' width='14' height='14' viewBox='0 0 14 14'>
 			<path d='M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z' />
 		</svg>
 	),
 	smartphone: (
-		<svg fill='currentColor' width='24' height='24' viewBox='0 0 24 24'>
+		<svg {...attributes} fill='currentColor' width='24' height='24' viewBox='0 0 24 24'>
 			<rect width='24' height='24' fill='url(#pattern0)' />
 			<defs>
 				<pattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'>
@@ -60,7 +74,7 @@ export const Icons = {
 		</svg>
 	),
 	smartwatch: (
-		<svg fill='currentColor' width='24' height='24' viewBox='0 0 24 24'>
+		<svg {...attributes} fill='currentColor' width='24' height='24' viewBox='0 0 24 24'>
 			<rect width='24' height='24' fill='url(#pattern0)' />
 			<defs>
 				<pattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'>
@@ -76,13 +90,18 @@ export const Icons = {
 		</svg>
 	),
 	success: (
-		<svg fill='currentColor' width='112' height='112' viewBox='0 0 16 16'>
+		<svg {...attributes} fill='currentColor' width='112' height='112' viewBox='0 0 16 16'>
 			<path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' />
 			<path d='M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z' />
 		</svg>
 	),
+	television: (
+		<svg {...attributes} fill='currentColor' width='24' height='24' viewBox='0 0 16 16'>
+			<path d='M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM13.991 3l.024.001a1.46 1.46 0 0 1 .538.143.757.757 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.464 1.464 0 0 1-.143.538.758.758 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.464 1.464 0 0 1-.538-.143.758.758 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.46 1.46 0 0 1 .143-.538.758.758 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3h11.991zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2z' />
+		</svg>
+	),
 	truck: (
-		<svg fill='currentColor' width='24' height='24' viewBox='0 0 24 24'>
+		<svg {...attributes} fill='currentColor' width='24' height='24' viewBox='0 0 24 24'>
 			<rect width='24' height='24' fill='url(#pattern0)' />
 			<defs>
 				<pattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'>
@@ -97,4 +116,4 @@ export const Icons = {
 			</defs>
 		</svg>
 	)
-};
+});

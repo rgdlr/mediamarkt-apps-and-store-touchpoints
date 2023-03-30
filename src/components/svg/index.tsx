@@ -4,7 +4,7 @@ import { Icons } from './icon';
 
 export function Svg(attributes: CustomSvgAttributes): ReactElement {
 	const { children, icon } = attributes;
-	return <>{icon ? Icons[icon] : <svg {...attributes}>{children}</svg>}</>;
+	return <>{icon ? Icons(attributes)[icon] : <svg {...attributes}>{children}</svg>}</>;
 }
 
 export type { CustomSvgAttributes };
