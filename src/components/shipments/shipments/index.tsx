@@ -46,7 +46,7 @@ export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 								<li key={shipment.deliveryDate}>
 									<Shipment shipment={shipment} onClick={setSelected}></Shipment>
 								</li>
-						  ))
+							))
 						: children}
 				</ul>
 			</main>
