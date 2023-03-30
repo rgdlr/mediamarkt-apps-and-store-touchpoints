@@ -40,7 +40,7 @@ export function Items(attributes: ItemsAttributes): ReactElement {
 	};
 
 	const driversSignatureDialog = {
-		header: <h3 className='dialog__title'>Delivery information</h3>,
+		header: <h3 className='dialog__title'>Driver's signature</h3>,
 		body: (
 			<Form>
 				<Label>Driver's signature</Label>
