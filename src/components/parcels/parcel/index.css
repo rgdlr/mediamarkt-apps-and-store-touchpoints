@@ -9,11 +9,11 @@
 }
 
 li:not(:last-child) .parcel {
-	border-bottom: 0.1rem solid var(--gray-200);
+	border-bottom: 0.1rem solid var(--gray-100);
 }
 
 .parcel:hover {
-	background-color: var(--gray-200);
+	background-color: var(--gray-100);
 }
 
 .parcel__icon {
@@ -48,5 +48,5 @@ li:not(:last-child) .parcel {
 }
 
 .parcel__status--delivered {
-	color: var(--gray-300);
+	color: var(--gray-200);
 }

@@ -8,11 +8,11 @@
 }
 
 li:not(:last-child) .shipment {
-	border-bottom: 0.1rem solid var(--gray-200);
+	border-bottom: 0.1rem solid var(--gray-100);
 }
 
 .shipment:hover {
-	background-color: var(--gray-200);
+	background-color: var(--gray-100);
 }
 
 .shipment__information {

@@ -78,7 +78,7 @@ export function App(): JSX.Element {
 					style={{
 						background: 'transparent',
 						boxShadow: 'none',
-						color: 'var(--gray-100)',
+						color: 'var(--gray-400)',
 						position: 'absolute',
 						right: '1.25rem',
 						top: '1.25rem'
