@@ -1,0 +1,28 @@
+.ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-inline: 1rem;
+  margin-inline: auto;
+}
+
+.ul__header {
+	background-color: var(--white-100);
+	font-size: 1.5rem;
+	padding: 2rem 1rem;
+	position: sticky;
+	top: 0;
+}
+
+.ul__main {
+	flex-grow: 1;
+}
+
+.ul__footer {
+	background-color: var(--white-100);
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	padding-block: 1rem 2rem;
+	position: sticky;
+}

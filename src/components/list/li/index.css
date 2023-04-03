@@ -1,0 +1,43 @@
+.li {
+	align-items: center;
+	cursor: default;
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	padding: 1rem;
+	width: 100%;
+}
+
+.li:not(:last-child) {
+	border-bottom: 0.1rem solid var(--gray-100);
+}
+
+.li:hover {
+	background-color: var(--gray-100);
+}
+
+.li__icon {
+	background-color: var(--red-200);
+	border-radius: 0.5rem;
+	display: grid;
+	height: 3.125rem;
+	place-content: center;
+	width: 3.125rem;
+}
+
+.li__information {
+	flex-grow: 1;
+	line-height: 1.25;
+}
+
+.li__detail {
+	color: var(--red-100);
+	display: grid;
+	font-size: 0.8rem;
+	place-content: center;
+	text-transform: uppercase;
+}
+
+.li__detail--disabled {
+	color: var(--gray-200);
+}

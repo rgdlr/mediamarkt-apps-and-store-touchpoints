@@ -7,6 +7,7 @@ export {
 	CustomLabelAttributes,
 	CustomSelectAttributes
 } from './form/types.d';
+export { CustomLiAttributes, CustomUlAttributes } from './list/types.d';
 export { CustomScannerAttributes } from './scanner/types.d';
 export { CustomSignatureAttributes } from './signature/types.d';
 export { CustomSvgAttributes } from './svg/types.d';

@@ -3,6 +3,7 @@ export { Canvas } from './canvas';
 export { Dialog, DialogError, DialogSuccess } from './dialog';
 export { Form, Input, Label, Select } from './form';
 export { Item, Items } from './items';
+export { Li, Ul } from './list';
 export { Parcel, Parcels } from './parcels';
 export { Scanner } from './scanner';
 export { Shipment, Shipments } from './shipments';
