@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { CustomSvgAttributes } from './types';
+import { CustomSvgAttributes } from './types.d';
 
 export type Icon = string;
 export type ItemTypeIcon = keyof typeof ItemTypeIcons;
