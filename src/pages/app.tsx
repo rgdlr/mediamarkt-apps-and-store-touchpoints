@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Button, Svg } from '../components';
+import { Button, Items, Parcels, Shipments, Svg } from '../components';
 import { Icon, Shape, Step } from '../constants';
+import { ContextProvider } from '../contexts';
 import { useFetch } from '../hooks';
 import { Carrier, Item, Parcel, Shipment } from '../interfaces';
-import { Items, Parcels, Shipments } from '.';
 import { getShipmentsFromParcels } from '../services';
 
 export function App(): JSX.Element {
@@ -52,7 +52,7 @@ export function App(): JSX.Element {
 	}, [selectedParcelId]);
 
 	return (
-		<>
+		<ContextProvider>
 			{step === Step.SHIPMENTS && (
 				<Shipments
 					carriers={carriers}
@@ -88,6 +88,6 @@ export function App(): JSX.Element {
 					<Svg icon={Icon.BACK}></Svg>
 				</Button>
 			)}
-		</>
+		</ContextProvider>
 	);
 }

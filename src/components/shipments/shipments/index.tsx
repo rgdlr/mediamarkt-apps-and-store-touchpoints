@@ -1,11 +1,15 @@
 import { BaseSyntheticEvent, ReactElement, useState } from 'react';
 import { Button, Dialog, Form, Input, Label, Shipment, Svg } from '../../../components';
 import { Icon, Shape } from '../../../constants';
+import { useTranslate } from '../../../hooks';
 import { ShipmentsAttributes } from './types.d';
 import './index.css';
 
 export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 	const { carriers, children, onSelect, parcels, shipments } = attributes;
+
+	const { translate } = useTranslate();
+
 	const [open, setOpen] = useState(false);
 
 	const setSelected = (event: BaseSyntheticEvent) => {
@@ -37,7 +41,7 @@ export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 	return (
 		<section className='shipments'>
 			<header className='shipments__header'>
-				<h2>Parcel Lists</h2>
+				<h2>{translate('parcel-lists')}</h2>
 			</header>
 			<main className='shipments__main'>
 				<ul>
