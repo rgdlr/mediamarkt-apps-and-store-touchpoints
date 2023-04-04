@@ -1,8 +1,8 @@
 import { BaseSyntheticEvent, ReactElement, useState } from 'react';
 import { Button, Dialog, Form, Input, Label, Shipment, Svg } from '../../../components';
 import { Icon, Shape } from '../../../constants';
-import './index.css';
 import { ShipmentsAttributes } from './types.d';
+import './index.css';
 
 export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 	const { carriers, children, onSelect, parcels, shipments } = attributes;
@@ -46,7 +46,7 @@ export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 								<li key={shipment.deliveryDate}>
 									<Shipment shipment={shipment} onClick={setSelected}></Shipment>
 								</li>
-							))
+						  ))
 						: children}
 				</ul>
 			</main>

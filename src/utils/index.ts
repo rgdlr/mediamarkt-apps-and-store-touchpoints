@@ -1,4 +1,5 @@
-import { Measure, MeasureAmounts, MeasureUnits, Measures } from '../interfaces/measure';
+import { MeasureAmounts, MeasureUnits, Measures } from '../constants';
+import { Measure } from '../interfaces';
 
 const EMPTY = '';
 const SPACE = ' ';

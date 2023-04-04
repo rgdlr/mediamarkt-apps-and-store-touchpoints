@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Svg } from '../../../components';
 import { ItemTypeIcon, getIconNameByItemType } from '../../../components/svg/icon';
-import { Measures } from '../../../interfaces/measure';
+import { Measures } from '../../../constants';
 import { getMeasure } from '../../../utils';
 import { ItemAttributes } from './types.d';
 import './index.css';
