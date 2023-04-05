@@ -7,6 +7,15 @@ async function getTranslations(locale: Locale | undefined) {
 	return translations.default;
 }
 
+function getKeyArgsAmount(key: string) {
+	return key
+		.split(' ')
+		.reduce(
+			(numberOfKeyArgs, keyArg) => (/\$\d+/g.test(keyArg) ? ++numberOfKeyArgs : numberOfKeyArgs),
+			0
+		);
+}
+
 export function useTranslate() {
 	const { locale } = useI18N();
 	const [translations, setTranslations] = useState();
@@ -19,6 +28,10 @@ export function useTranslate() {
 	}, [locale]);
 
 	const translate = (key: string, ...args: (number | string | undefined)[]) => {
+		const keyArgsAmount = getKeyArgsAmount(key);
+		if (keyArgsAmount !== args.length) {
+			throw new Error('number of arguments does not match in translate');
+		}
 		if (translations) {
 			let translation: string = translations[key] || key;
 			args.forEach((arg, index) => {
