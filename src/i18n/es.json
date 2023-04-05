@@ -1,3 +1,24 @@
 {
-	"parcel-lists": "Listas de Paquetes"
+	"$1 Parcel List": "$1 Lista de paquetes",
+	"$1 carriers will pickup the parcel $2": "$1 transportistas recogerán el paquete $2",
+	"$1 items to be picked up": "$1 artículos a ser recogidos",
+	"$1 items": "$1 artículos",
+	"Add": "Añadir",
+	"Carrier ID": "ID del transportista",
+	"Delivery information": "Información de reparto",
+	"Driver's name": "Nombre del transportista",
+	"Driver's signature": "Firma del transportista",
+	"ID": "ID",
+	"License plate": "Placa de matriculación",
+	"Parcel List $1": "Lista de paquetes $1",
+	"Parcel Lists": "Listas de Paquetes",
+	"Parcel and carrier information": "Información de paquete y transportista",
+	"Parcel successfully delivered to the carrier": "Paquete entregado con éxito al transportista",
+	"Some information is wrong": "Alguna información es errónea",
+	"back": "atrás",
+	"delivered": "entragado",
+	"delivery": "reparto",
+	"go to parcel list": "ir a lista de paquetes",
+	"next": "siguiente",
+	"save": "guardar"
 }

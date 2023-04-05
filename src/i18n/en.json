@@ -1,3 +1,24 @@
 {
-	"parcel-lists": "Parcel Lists"
+	"$1 Parcel List": "$1 Parcel List",
+	"$1 carriers will pickup the parcel $2": "$1 carriers will pickup the parcel $2",
+	"$1 items to be picked up": "$1 items to be picked up",
+	"$1 items": "$1 items",
+	"Add": "Add",
+	"Carrier ID": "Carrier ID",
+	"Delivery information": "Delivery information",
+	"Driver's name": "Driver's name",
+	"Driver's signature": "Driver's signature",
+	"ID": "ID",
+	"License plate": "License plate",
+	"Parcel List $1": "Parcel List $1",
+	"Parcel Lists": "Parcel Lists",
+	"Parcel and carrier information": "Parcel and carrier information",
+	"Parcel successfully delivered to the carrier": "Parcel successfully delivered to the carrier",
+	"Some information is wrong": "Some information is wrong",
+	"back": "back",
+	"delivered": "delivered",
+	"delivery": "delivery",
+	"go to parcel list": "go to parcel list",
+	"next": "next",
+	"save": "save"
 }

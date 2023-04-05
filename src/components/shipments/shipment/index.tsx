@@ -1,18 +1,25 @@
 import { ReactElement } from 'react';
 import { ShipmentAttributes } from './types.d';
+import { useTranslate } from '../../../hooks';
 import './index.css';
 
 export function Shipment(attributes: ShipmentAttributes): ReactElement {
 	const { shipment } = attributes;
 
+	const { translate } = useTranslate();
+
 	return (
 		<button {...attributes} className='shipment' data-id={shipment?.deliveryDate}>
 			<div className='shipment__information'>
-				<div className='shipment__title'>Parcel List {shipment?.deliveryDate}</div>
+				<div className='shipment__title'>{translate('Parcel List $1', shipment?.deliveryDate)}</div>
 				<div className='shipment__carriers'>
-					{shipment?.carriersCount} carriers will pickup the parcel on {shipment?.pickupDate}
+					{translate(
+						'$1 carriers will pickup the parcel $2',
+						shipment?.carriersCount,
+						'on ' + shipment?.pickupDate
+					)}
 				</div>
-				<div className='shipment__items'>{shipment?.itemsCount} items</div>
+				<div className='shipment__items'>{translate('$1 items', shipment?.itemsCount)}</div>
 			</div>
 			<div className='shipment__date'>{shipment?.deliveryDate}</div>
 		</button>

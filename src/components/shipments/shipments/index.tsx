@@ -17,12 +17,12 @@ export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 		if (typeof onSelect === 'function') onSelect(id ?? '');
 	};
 
-	const header = <h3 className='dialog__title'>Parcel and carrier information</h3>;
+	const header = <h3 className='dialog__title'>{translate('Parcel and carrier information')}</h3>;
 	const body = (
 		<Form>
-			<Label>ID</Label>
+			<Label>{translate('ID')}</Label>
 			<Input list={'parcel-id'}></Input>
-			<Label>Carrier ID</Label>
+			<Label>{translate('Carrier ID')}</Label>
 			<Input list={'carrier-id'}></Input>
 			<datalist id='carrier-id'>
 				{carriers?.map((carrier) => (
@@ -36,12 +36,12 @@ export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 			</datalist>
 		</Form>
 	);
-	const footer = <Button onClick={() => setOpen(false)}>ADD</Button>;
+	const footer = <Button onClick={() => setOpen(false)}>{translate('Add')?.toUpperCase()}</Button>;
 
 	return (
 		<section className='shipments'>
 			<header className='shipments__header'>
-				<h2>{translate('parcel-lists')}</h2>
+				<h2>{translate('Parcel Lists')}</h2>
 			</header>
 			<main className='shipments__main'>
 				<ul>

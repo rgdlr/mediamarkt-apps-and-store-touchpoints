@@ -1,10 +1,13 @@
 import { BaseSyntheticEvent, ReactElement } from 'react';
 import { Parcel } from '../../../components';
-import './index.css';
+import { useTranslate } from '../../../hooks';
 import { ParcelsAttributes } from './types.d';
+import './index.css';
 
 export function Parcels(attributes: ParcelsAttributes): ReactElement {
 	const { carriers, children, hidden, onSelect, shipment } = attributes;
+
+	const { translate } = useTranslate();
 
 	const setSelected = (event: BaseSyntheticEvent) => {
 		const id = event.currentTarget.getAttribute('data-id');
@@ -14,7 +17,7 @@ export function Parcels(attributes: ParcelsAttributes): ReactElement {
 	return (
 		<section className={`parcels ${hidden ? 'parcels--out' : ''}`}>
 			<header className='parcels__header'>
-				<h2>Parcel List {shipment?.deliveryDate}</h2>
+				<h2>{translate('$1 Parcel List', shipment?.deliveryDate)}</h2>
 			</header>
 			<main className='parcels__main'>
 				<ul>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useI18N } from '../hooks';
 import { Locale } from '../constants';
 
-async function getTranslations(locale: Locale) {
+async function getTranslations(locale: Locale | undefined) {
 	const translations = await import(`../i18n/${locale}.json`);
 	return translations.default;
 }
@@ -13,14 +13,18 @@ export function useTranslate() {
 
 	useEffect(() => {
 		async function updateTranslations() {
-			setTranslations(await getTranslations(locale ?? Locale.En));
+			setTranslations(await getTranslations(locale));
 		}
 		updateTranslations();
 	}, [locale]);
 
-	const translate = (key: string) => {
+	const translate = (key: string, ...args: (number | string | undefined)[]) => {
 		if (translations) {
-			return translations[key] || key;
+			let translation: string = translations[key] || key;
+			args.forEach((arg, index) => {
+				translation = translation.replace(`$${++index}`, String(arg ?? '?'));
+			});
+			return translation;
 		}
 	};
 

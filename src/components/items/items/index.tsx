@@ -9,22 +9,26 @@ import {
 	Label,
 	Signature
 } from '../../../components';
-import './index.css';
+import { useTranslate } from '../../../hooks';
 import { ItemsAttributes } from './types.d';
+import './index.css';
 
 export function Items(attributes: ItemsAttributes): ReactElement {
 	const { carrier, children, items, parcel } = attributes;
+
+	const { translate } = useTranslate();
+
 	const [isDeliveryInformationDialogOpen, setIsDeliveryInformationDialogOpen] = useState(false);
 	const [isDriversSignatureDialogOpen, setIsDriversSignatureDialogOpen] = useState(false);
 	const [isSuccessDialogOpen, setIsSuccessDialogOpen] = useState(false);
 
 	const deliveryInformationDialog = {
-		header: <h3 className='dialog__title'>Delivery information</h3>,
+		header: <h3 className='dialog__title'>{translate('Delivery information')}</h3>,
 		body: (
 			<Form>
-				<Label>Driver's name</Label>
+				<Label>{translate("Driver's name")}</Label>
 				<Input value={carrier?.driver} readOnly></Input>
-				<Label>License plate</Label>
+				<Label>{translate('License plate')}</Label>
 				<Input value={carrier?.licensePlate.toUpperCase()} readOnly></Input>
 			</Form>
 		),
@@ -34,16 +38,16 @@ export function Items(attributes: ItemsAttributes): ReactElement {
 					setIsDeliveryInformationDialogOpen(false);
 					setIsDriversSignatureDialogOpen(true);
 				}}>
-				NEXT
+				{translate('next')}
 			</Button>
 		)
 	};
 
 	const driversSignatureDialog = {
-		header: <h3 className='dialog__title'>Driver's signature</h3>,
+		header: <h3 className='dialog__title'>{translate("Driver's signature")}</h3>,
 		body: (
 			<Form>
-				<Label>Driver's signature</Label>
+				<Label>{translate("Driver's signature")}</Label>
 				<Signature></Signature>
 			</Form>
 		),
@@ -53,7 +57,7 @@ export function Items(attributes: ItemsAttributes): ReactElement {
 					setIsDriversSignatureDialogOpen(false);
 					setIsSuccessDialogOpen(true);
 				}}>
-				SAVE
+				{translate('save')}
 			</Button>
 		)
 	};
@@ -61,7 +65,7 @@ export function Items(attributes: ItemsAttributes): ReactElement {
 	return (
 		<section className='items'>
 			<header className='items__header'>
-				<h2>{parcel?.id.$oid.toUpperCase()} Parcel List</h2>
+				<h2>{translate('$1 Parcel List', parcel?.id.$oid.toUpperCase())}</h2>
 			</header>
 			<main className='items__main'>
 				<ul>
@@ -70,12 +74,12 @@ export function Items(attributes: ItemsAttributes): ReactElement {
 								<li key={item.id.$oid}>
 									<Item item={item}></Item>
 								</li>
-							))
+						  ))
 						: children}
 				</ul>
 			</main>
 			<footer className='items__footer'>
-				<Button onClick={() => setIsDeliveryInformationDialogOpen(true)}>DELIVERY</Button>
+				<Button onClick={() => setIsDeliveryInformationDialogOpen(true)}>{translate("delivery")}</Button>
 			</footer>
 			<Dialog
 				body={deliveryInformationDialog.body}
