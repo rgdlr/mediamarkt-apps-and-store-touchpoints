@@ -17,7 +17,7 @@ export function getIconNameByItemType(itemType: ItemTypeIcon): Icon {
 
 export const Icons = (attributes: CustomSvgAttributes): Record<string, ReactElement> => ({
 	back: (
-		<svg {...attributes} fill='currentColor' width='16' height='16' viewBox='0 0 16 16'>
+		<svg {...attributes} fill='currentColor' width='24' height='24' viewBox='0 0 16 16'>
 			<path d='M16 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H16V7Z' />
 		</svg>
 	),
@@ -54,7 +54,7 @@ export const Icons = (attributes: CustomSvgAttributes): Record<string, ReactElem
 		</svg>
 	),
 	plus: (
-		<svg {...attributes} fill='currentColor' width='14' height='14' viewBox='0 0 14 14'>
+		<svg {...attributes} fill='currentColor' width='24' height='24' viewBox='0 0 14 14'>
 			<path d='M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z' />
 		</svg>
 	),
