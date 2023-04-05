@@ -16,7 +16,7 @@ export function Shipment(attributes: ShipmentAttributes): ReactElement {
 					{translate(
 						'$1 carriers will pickup the parcel $2',
 						shipment?.carriersCount,
-						'on ' + shipment?.pickupDate
+						shipment?.pickupDate
 					)}
 				</div>
 				<div className='shipment__items'>{translate('$1 items', shipment?.itemsCount)}</div>
