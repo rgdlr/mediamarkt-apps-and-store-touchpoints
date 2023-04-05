@@ -15,7 +15,7 @@ export function Parcel(attributes: ParcelAttributes): ReactElement {
 				<Svg icon='truck'></Svg>
 			</div>
 			<div className='parcel__information'>
-				<div className='parcel__title'>{translate('Parcel List $1', parcel?.deliveryDate)}</div>
+				<div className='parcel__title'>{translate('$1 Parcel List', parcel?.id.$oid.toUpperCase())}</div>
 				<div className='parcel__company'>{carrier?.companyName}</div>
 				<div className='parcel__items'>
 					{translate('$1 items to be picked up', parcel?.itemsCount)}
