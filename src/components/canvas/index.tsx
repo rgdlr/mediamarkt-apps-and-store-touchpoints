@@ -15,7 +15,7 @@ export function Canvas(attributes: CustomCanvasAttributes): ReactElement {
 
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const [context, setContext] = useState<CanvasRenderingContext2D>();
-	const [isDrawing, setIsDrawing] = useState(false);
+	const [isDrawing, setIsDrawing] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (canvasRef && canvasRef.current) {
@@ -71,11 +71,11 @@ export function Canvas(attributes: CustomCanvasAttributes): ReactElement {
 		<canvas
 			{...restAttributes}
 			onMouseDown={onMouseDown}
-			onMouseUp={onMouseUp}
 			onMouseMove={onMouseMove}
-			onTouchStart={onTouchStart}
+			onMouseUp={onMouseUp}
 			onTouchEnd={onTouchEnd}
 			onTouchMove={onTouchMove}
+			onTouchStart={onTouchStart}
 			ref={canvasRef}>
 			{children}
 		</canvas>

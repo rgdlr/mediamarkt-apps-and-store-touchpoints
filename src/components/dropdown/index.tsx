@@ -51,7 +51,7 @@ export function Dropdown(attributes: CustomDropdownAttributes): ReactElement {
 					setSelected(event.target.getAttribute('data-option'));
 				}}>
 				{options.map((option) => (
-					<li aria-selected={selected === option.id} className='dropdown__li'>
+					<li aria-selected={selected === option.id} className='dropdown__li' key={option.id}>
 						<button className='dropdown__li-button' data-option={option.id}>
 							{option.value}
 						</button>

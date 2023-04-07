@@ -13,8 +13,8 @@ export function Item(attributes: ItemAttributes): ReactElement {
 		<div className='item'>
 			<div className='item__icon'>
 				<Svg
-					style={{ color: 'var(--red-100)' }}
-					icon={getIconNameByItemType(item?.type as ItemTypeIcon)}></Svg>
+					icon={getIconNameByItemType(item?.type as ItemTypeIcon)}
+					style={{ color: 'var(--red-100)' }}></Svg>
 			</div>
 			<div className='item__information'>
 				<div className='item__title'>{item?.id.$oid.toUpperCase()}</div>

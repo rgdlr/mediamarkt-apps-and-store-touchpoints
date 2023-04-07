@@ -14,6 +14,7 @@ export function Dialog(attributes: CustomDialogAttributes): ReactElement {
 		position = Position.BOTTOM,
 		...restAttributes
 	} = attributes;
+
 	return (
 		<dialog
 			{...restAttributes}

@@ -5,7 +5,7 @@ import './index.css';
 
 export function Li(attributes: CustomLiAttributes): ReactElement {
 	const { className, ...restAttributes } = attributes;
-	return <li {...restAttributes} className={computeClassNames('li', className)} role='button'></li>;
+	return <li {...restAttributes} className={computeClassNames('li', className)}></li>;
 }
 
 export type { CustomLiAttributes };

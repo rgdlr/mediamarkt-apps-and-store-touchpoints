@@ -79,7 +79,9 @@ export function Items(attributes: ItemsAttributes): ReactElement {
 				</ul>
 			</main>
 			<footer className='items__footer'>
-				<Button onClick={() => setIsDeliveryInformationDialogOpen(true)}>{translate("delivery")}</Button>
+				<Button onClick={() => setIsDeliveryInformationDialogOpen(true)}>
+					{translate('delivery')}
+				</Button>
 			</footer>
 			<Dialog
 				body={deliveryInformationDialog.body}
@@ -92,8 +94,8 @@ export function Items(attributes: ItemsAttributes): ReactElement {
 				header={driversSignatureDialog.header}
 				open={isDriversSignatureDialogOpen}></Dialog>
 			<DialogSuccess
-				open={isSuccessDialogOpen}
-				onClose={() => setIsSuccessDialogOpen(false)}></DialogSuccess>
+				onClose={() => setIsSuccessDialogOpen(false)}
+				open={isSuccessDialogOpen}></DialogSuccess>
 		</section>
 	);
 }

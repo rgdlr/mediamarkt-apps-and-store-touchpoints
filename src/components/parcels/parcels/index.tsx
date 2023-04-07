@@ -26,8 +26,8 @@ export function Parcels(attributes: ParcelsAttributes): ReactElement {
 								<li key={parcel.id.$oid}>
 									<Parcel
 										carrier={carriers?.at(index)}
-										parcel={parcel}
-										onClick={setSelected}></Parcel>
+										onClick={setSelected}
+										parcel={parcel}></Parcel>
 								</li>
 						  ))
 						: children}

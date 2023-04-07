@@ -9,9 +9,9 @@ export function DialogSuccess(attributes: CustomDialogAttributes): ReactElement 
 
 	const { translate } = useTranslate();
 
-	const [isOpen, setIsOpen] = useState(open);
+	const [isOpen, setIsOpen] = useState<boolean>(open ?? false);
 
-	useEffect(() => void setIsOpen(open), [open]);
+	useEffect(() => void (open && setIsOpen(open)), [open]);
 
 	const closeDialog = () => void setIsOpen(false);
 

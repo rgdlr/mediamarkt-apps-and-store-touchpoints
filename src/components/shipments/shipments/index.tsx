@@ -48,14 +48,14 @@ export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 					{shipments
 						? shipments.map((shipment) => (
 								<li key={shipment.deliveryDate}>
-									<Shipment shipment={shipment} onClick={setSelected}></Shipment>
+									<Shipment onClick={setSelected} shipment={shipment}></Shipment>
 								</li>
 						  ))
 						: children}
 				</ul>
 			</main>
 			<footer className='shipments__footer'>
-				<Button shape={Shape.CIRCLE} onClick={() => setOpen(true)}>
+				<Button onClick={() => setOpen(true)} shape={Shape.CIRCLE}>
 					<Svg icon={Icon.PLUS}></Svg>
 				</Button>
 			</footer>
