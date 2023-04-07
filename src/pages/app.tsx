@@ -5,6 +5,12 @@ import { useFetch, useI18N } from '../hooks';
 import { Carrier, Item, Parcel, Shipment } from '../interfaces';
 import { getShipmentsFromParcels } from '../services';
 
+const languageDropdownOptions = [
+	{ id: Locale.En, value: '🇬🇧 English' },
+	{ id: Locale.Es, value: '🇪🇸 Español' },
+	{ id: Locale.Fr, value: '🇫🇷 Français' }
+];
+
 export function App(): JSX.Element {
 	const { data: carriers } = useFetch<Carrier[]>('carriers.json');
 	const { data: items } = useFetch<Item[]>('items.json');
@@ -95,8 +101,9 @@ export function App(): JSX.Element {
 				)}
 				<Dropdown
 					defaultValue={locale}
-					position={Position.RIGHT}
-					onSelectOption={setLocale}></Dropdown>
+					onSelectOption={setLocale}
+					options={languageDropdownOptions}
+					position={Position.RIGHT}></Dropdown>
 			</div>
 		</>
 	);

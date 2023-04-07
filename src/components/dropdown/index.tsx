@@ -1,7 +1,7 @@
 import { BaseSyntheticEvent, MouseEvent, ReactElement, useEffect, useRef, useState } from 'react';
 import { Button } from '../../components';
 import { CustomDropdownAttributes } from '../../components/types.d';
-import { Locale, Position, Shape } from '../../constants';
+import { Position, Shape } from '../../constants';
 import { useOnBlur } from '../../hooks';
 import { computeClassNames } from '../../utils';
 import './index.css';
@@ -12,6 +12,7 @@ export function Dropdown(attributes: CustomDropdownAttributes): ReactElement {
 		defaultValue,
 		className,
 		onSelectOption,
+		options,
 		position = Position.LEFT,
 		shape = Shape.RECTANGLE,
 		...restAttributes
@@ -35,8 +36,8 @@ export function Dropdown(attributes: CustomDropdownAttributes): ReactElement {
 	return (
 		<div
 			{...restAttributes}
-			ref={dropdownRef}
-			className={computeClassNames('dropdown', `dropdown--${position}`, className)}>
+			className={computeClassNames('dropdown', `dropdown--${position}`, className)}
+			ref={dropdownRef}>
 			<Button className='dropdown__button' onClick={toggleExpanded} shape={shape}>
 				<svg width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
 					<path d='M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z' />
@@ -44,26 +45,18 @@ export function Dropdown(attributes: CustomDropdownAttributes): ReactElement {
 				</svg>
 			</Button>
 			<ul
-				className='dropdown__ul'
 				aria-expanded={expanded}
+				className='dropdown__ul'
 				onClick={(event: BaseSyntheticEvent) => {
 					setSelected(event.target.getAttribute('data-option'));
 				}}>
-				<li className='dropdown__li' aria-selected={selected === Locale.En}>
-					<button className='dropdown__li-button' data-option={Locale.En}>
-						🇬🇧 English
-					</button>
-				</li>
-				<li className='dropdown__li' aria-selected={selected === Locale.Es}>
-					<button className='dropdown__li-button' data-option={Locale.Es}>
-						🇪🇸 Español
-					</button>
-				</li>
-				<li className='dropdown__li' aria-selected={selected === Locale.Fr}>
-					<button className='dropdown__li-button' data-option={Locale.Fr}>
-						🇫🇷 Français
-					</button>
-				</li>
+				{options.map((option) => (
+					<li aria-selected={selected === option.id} className='dropdown__li'>
+						<button className='dropdown__li-button' data-option={option.id}>
+							{option.value}
+						</button>
+					</li>
+				))}
 			</ul>
 		</div>
 	);

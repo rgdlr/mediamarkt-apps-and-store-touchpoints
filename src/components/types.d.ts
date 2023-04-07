@@ -1,7 +1,7 @@
 export { CustomButtonAttributes } from './button/types.d';
 export { CustomCanvasAttributes } from './canvas/types.d';
 export { CustomDialogAttributes } from './dialog/types.d';
-export { CustomDropdownAttributes } from './dropdown/types.d';
+export { CustomDropdownAttributes, CustomDropdownOption } from './dropdown/types.d';
 export {
 	CustomFormAttributes,
 	CustomInputAttributes,
