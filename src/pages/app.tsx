@@ -12,9 +12,9 @@ const languageDropdownOptions = [
 ];
 
 export function App(): JSX.Element {
-	const { data: carriers } = useFetch<Carrier[]>('carriers.json');
-	const { data: items } = useFetch<Item[]>('items.json');
-	const { data: parcels } = useFetch<Parcel[]>('parcels.json');
+	const { data: carriers } = useFetch<Carrier[]>('api/carriers.json');
+	const { data: items } = useFetch<Item[]>('api/items.json');
+	const { data: parcels } = useFetch<Parcel[]>('api/parcels.json');
 
 	const { locale, setLocale } = useI18N();
 
