@@ -36,7 +36,7 @@ export function Shipments(attributes: ShipmentsAttributes): ReactElement {
 			</datalist>
 		</Form>
 	);
-	const footer = <Button onClick={() => setOpen(false)}>{translate('Add')?.toUpperCase()}</Button>;
+	const footer = <Button onClick={() => setOpen(false)}>{translate('add')?.toUpperCase()}</Button>;
 
 	return (
 		<section className='shipments'>
