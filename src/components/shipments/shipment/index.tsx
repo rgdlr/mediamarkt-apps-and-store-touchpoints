@@ -4,12 +4,12 @@ import { useTranslate } from '../../../hooks';
 import './index.css';
 
 export function Shipment(attributes: ShipmentAttributes): ReactElement {
-	const { shipment } = attributes;
+	const { shipment, ...restAttributes } = attributes;
 
 	const { translate } = useTranslate();
 
 	return (
-		<button {...attributes} className='shipment' data-id={shipment?.deliveryDate}>
+		<button {...restAttributes} className='shipment' data-id={shipment?.deliveryDate}>
 			<div className='shipment__information'>
 				<div className='shipment__title'>{translate('Parcel List $1', shipment?.deliveryDate)}</div>
 				<div className='shipment__carriers'>

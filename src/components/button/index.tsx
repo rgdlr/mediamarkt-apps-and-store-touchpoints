@@ -5,9 +5,11 @@ import { computeClassNames } from '../../utils';
 import './index.css';
 
 export function Button(attributes: CustomButtonAttributes): ReactElement {
-	const { children, className, shape = Shape.RECTANGLE } = attributes;
+	const { children, className, shape = Shape.RECTANGLE, ...restAttributes } = attributes;
 	return (
-		<button {...attributes} className={computeClassNames('button', `button--${shape}`, className)}>
+		<button
+			{...restAttributes}
+			className={computeClassNames('button', `button--${shape}`, className)}>
 			{children}
 		</button>
 	);

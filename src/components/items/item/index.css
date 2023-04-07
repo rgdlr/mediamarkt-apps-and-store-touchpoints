@@ -11,11 +11,6 @@ li:not(:last-child) .item {
 	border-bottom: 0.1rem solid var(--gray-100);
 }
 
-
-.item:hover {
-	background-color: var(--gray-100);
-}
-
 .item__icon {
 	background-color: var(--red-200);
 	border-radius: 0.5rem;

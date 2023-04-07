@@ -9,7 +9,8 @@ export function Canvas(attributes: CustomCanvasAttributes): ReactElement {
 		lineCap = 'round',
 		lineJoin = 'round',
 		lineWidth = 1,
-		strokeStyle = '#000'
+		strokeStyle = '#000',
+		...restAttributes
 	} = attributes;
 
 	const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -68,7 +69,7 @@ export function Canvas(attributes: CustomCanvasAttributes): ReactElement {
 
 	return (
 		<canvas
-			{...attributes}
+			{...restAttributes}
 			onMouseDown={onMouseDown}
 			onMouseUp={onMouseUp}
 			onMouseMove={onMouseMove}

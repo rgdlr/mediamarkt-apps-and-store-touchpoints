@@ -4,8 +4,8 @@ import { CustomUlAttributes } from './types.d';
 import './index.css';
 
 export function Ul(attributes: CustomUlAttributes): ReactElement {
-	const { className } = attributes;
-	return <ul className={computeClassNames('ul', className)}></ul>;
+	const { className, ...restAttributes } = attributes;
+	return <ul {...restAttributes} className={computeClassNames('ul', className)}></ul>;
 }
 
 export type { CustomUlAttributes };

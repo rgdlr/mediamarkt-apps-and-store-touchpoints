@@ -5,12 +5,12 @@ import { ParcelAttributes } from './types.d';
 import './index.css';
 
 export function Parcel(attributes: ParcelAttributes): ReactElement {
-	const { carrier, parcel } = attributes;
+	const { carrier, parcel, ...restAttributes} = attributes;
 
 	const { translate } = useTranslate();
 
 	return (
-		<button {...attributes} className='parcel' data-id={parcel?.id.$oid}>
+		<button {...restAttributes} className='parcel' data-id={parcel?.id.$oid}>
 			<div className='parcel__icon'>
 				<Svg icon='truck'></Svg>
 			</div>

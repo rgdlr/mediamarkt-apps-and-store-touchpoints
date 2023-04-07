@@ -3,9 +3,9 @@ import { CustomSelectAttributes } from '../../../components/types.d';
 import './index.css';
 
 export function Select(attributes: CustomSelectAttributes): ReactElement {
-	const { children } = attributes;
+	const { children, ...restAttributes } = attributes;
 	return (
-		<select {...attributes} className='select'>
+		<select {...restAttributes} className='select'>
 			{children}
 		</select>
 	);

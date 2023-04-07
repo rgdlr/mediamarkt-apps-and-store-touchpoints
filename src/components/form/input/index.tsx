@@ -4,8 +4,8 @@ import { computeClassNames } from '../../../utils';
 import './index.css';
 
 export function Input(attributes: CustomInputAttributes): ReactElement {
-	const { className } = attributes;
-	return <input {...attributes} className={computeClassNames('input', className)}></input>;
+	const { className, ...restAttributes } = attributes;
+	return <input {...restAttributes} className={computeClassNames('input', className)}></input>;
 }
 
 export type { CustomInputAttributes };

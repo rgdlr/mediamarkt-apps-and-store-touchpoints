@@ -5,9 +5,9 @@ import { computeClassNames } from '../../utils';
 import './index.css';
 
 export function Signature(attributes: CustomSignatureAttributes): ReactElement {
-	const { children, className } = attributes;
+	const { children, className, ...restAttributes } = attributes;
 	return (
-		<Canvas {...attributes} className={computeClassNames('signature', className)}>
+		<Canvas {...restAttributes} className={computeClassNames('signature', className)}>
 			{children}
 		</Canvas>
 	);

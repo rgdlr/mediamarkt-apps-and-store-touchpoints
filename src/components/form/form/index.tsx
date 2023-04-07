@@ -4,9 +4,9 @@ import { computeClassNames } from '../../../utils';
 import './index.css';
 
 export function Form(attributes: CustomFormAttributes): ReactElement {
-	const { children, className } = attributes;
+	const { children, className, ...restAttributes } = attributes;
 	return (
-		<form {...attributes} className={computeClassNames('form', className)}>
+		<form {...restAttributes} className={computeClassNames('form', className)}>
 			{children}
 		</form>
 	);

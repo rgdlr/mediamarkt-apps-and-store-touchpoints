@@ -2,22 +2,18 @@ import { ReactElement, useEffect, useState } from 'react';
 import { Button, Dialog, Svg } from '../../../components';
 import { CustomDialogAttributes } from '../../../components/types.d';
 import { Position } from '../../../constants';
-import { useTranslate } from '@/hooks';
+import { useTranslate } from '../../../hooks';
 
 export function DialogSuccess(attributes: CustomDialogAttributes): ReactElement {
-	const { open, position = Position.CENTER } = attributes;
+	const { open, position = Position.CENTER, ...restAttributes } = attributes;
 
 	const { translate } = useTranslate();
 
 	const [isOpen, setIsOpen] = useState(open);
 
-	useEffect(() => {
-		setIsOpen(open);
-	}, [open]);
+	useEffect(() => void setIsOpen(open), [open]);
 
-	const closeDialog = () => {
-		setIsOpen(false);
-	};
+	const closeDialog = () => void setIsOpen(false);
 
 	const body = (
 		<>
@@ -31,6 +27,11 @@ export function DialogSuccess(attributes: CustomDialogAttributes): ReactElement 
 	const footer = <Button onClick={closeDialog}>{translate('go to parcel list')}</Button>;
 
 	return (
-		<Dialog {...attributes} body={body} footer={footer} open={isOpen} position={position}></Dialog>
+		<Dialog
+			{...restAttributes}
+			body={body}
+			footer={footer}
+			open={isOpen}
+			position={position}></Dialog>
 	);
 }

@@ -5,10 +5,18 @@ import { CustomDialogAttributes } from '../../components/types.d';
 import './index.css';
 
 export function Dialog(attributes: CustomDialogAttributes): ReactElement {
-	const { body, children, className, footer, header, position = Position.BOTTOM } = attributes;
+	const {
+		body,
+		children,
+		className,
+		footer,
+		header,
+		position = Position.BOTTOM,
+		...restAttributes
+	} = attributes;
 	return (
 		<dialog
-			{...attributes}
+			{...restAttributes}
 			className={computeClassNames('dialog', `dialog--${position}`, className)}>
 			<section className='dialog__window'>
 				{header && <header className='dialog__header'>{header}</header>}
