@@ -1,6 +1,7 @@
 export { Button } from './button';
 export { Canvas } from './canvas';
 export { Dialog, DialogError, DialogSuccess } from './dialog';
+export { Dropdown } from './dropdown';
 export { Form, Input, Label, Select } from './form';
 export { Item, Items } from './items';
 export { Li, Ul } from './list';

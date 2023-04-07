@@ -1,4 +1,6 @@
 export const enum Position {
 	BOTTOM = 'bottom',
-	CENTER = 'center'
+	CENTER = 'center',
+	LEFT = 'left',
+	RIGHT = 'right'
 }
