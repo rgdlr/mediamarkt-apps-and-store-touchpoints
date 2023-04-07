@@ -1,4 +1,5 @@
 export const enum Locale {
 	En = 'en',
-	Es = 'es'
+	Es = 'es',
+	Fr = 'fr'
 }
