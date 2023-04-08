@@ -11,7 +11,9 @@ export function DialogError(attributes: CustomDialogAttributes): ReactElement {
 
 	const [isOpen, setIsOpen] = useState<boolean>(open ?? false);
 
-	useEffect(() => void (open && setIsOpen(open)), [open]);
+	useEffect(() => {
+		open && setIsOpen(open);
+	}, [open]);
 
 	const closeDialog = () => void setIsOpen(false);
 
